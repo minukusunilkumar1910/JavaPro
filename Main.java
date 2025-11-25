@@ -163,4 +163,63 @@ public class Main
     }  
   } 
 }
+
+
+
+
+public class Main{
+   public static void main(String[] args) {
+      int a,b,c,d;
+       Scanner ip =new Scanner(System.in);
+       System.out.println("enter a");
+       a= ip.nextInt();
+       System.out.println("enter b");
+       b= ip.nextInt();
+       System.out.println("enter c");
+       c= ip.nextInt();
+       System.out.println("enter d");
+       d= ip.nextInt();
+       
+      if(a>b)
+      {
+           if(a>c)
+           {
+                if(a>d)
+                {
+                 System.out.println("a is big");
+                }
+                else
+                {
+                 System.out.println("d is big");
+                } 
+           }
+           else
+           {
+             System.out.println(" c is big");
+           }
+      }  
+      else{
+          if(b>c)
+          {
+                 if(b>d){
+                  System.out.println("b is big");
+                 }
+                 else{
+                  System.out.println("d is big");
+                 }  
+          }
+          else if(c>d)
+          {
+            System.out.println("c is big");
+          }
+          else{
+            System.out.println("d is big");
+          }
+      }
+      
+
+   }
+}
+
   */
+
