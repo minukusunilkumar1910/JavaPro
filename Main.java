@@ -221,19 +221,20 @@ public class Main{
    }
 }
 
-
-
-public class Main{
-   public static void main(String[] args) {
-    int num =1;
-   while(num<=10){
-    System.out.println("the"+num);
-       num++;
-   }
-     
+public class Main
+{
+   public static void main(String[] args)
+   {
+      int num = 1;
+      
+      while(num <= 10 )
+      {
+      System.out.println(num);
+      num++;
    }
 }
+}
+*/
 
 
-  */
 
