@@ -234,6 +234,24 @@ public class Main
    }
 }
 }
+
+
+public class Main{
+   public static void main(String[] args){
+      System.out.println("before Swapping");
+      int a=5;
+      int b=3;
+      int c;
+   System.out.println(a+"  "+b);
+   System.out.println("After Swapping");
+      c=a;
+      a=b;
+      b=c;
+   System.out.println(a+"  "+b);
+   }
+}
+
+
 */
 
 
