@@ -342,7 +342,23 @@ public class Main
    }
 }
 
+public class Main
+{
+   public static void main(String[] args)
+ {
+       int fact=1;
+       int i;
+       int n=0;
+       System.out.println("enter the number");
+       Scanner ip = new Scanner(System.in);
+       n = ip.nextInt();
+   for(i=1;i<=n;i++)
+   {
+     fact = fact*i;
+   System.out.println(fact);
+ }
 
+}
 
 */
 
