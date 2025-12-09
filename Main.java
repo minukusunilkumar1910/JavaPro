@@ -359,7 +359,27 @@ public class Main
  }
 
 }
+import java.util.Scanner;
 
+public class Main
+{
+   public static void main(String[] args)
+   {
+   int i,j,n,count=0;
+   System.out.println("enter the number");
+   Scanner ip=new Scanner(System.in);
+   n=ip.nextInt();
+  for(i=2;i<=n;i++)
+  {
+   for(j=1;j<=i;j++)
+   {
+      if(i%j==0)
+      count++;
+   }
+   if(count==2)
+ System.out.println(i);
+  }
+}
 */
 
 
