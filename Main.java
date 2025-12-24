@@ -1,8 +1,4 @@
 
-import java.util.Scanner;
-
-
-// public class Main
 // {
 //    public static void main(String[] args) {
 //       System.out.println("Hello");
@@ -387,7 +383,6 @@ public class Main
 }
 
 
-*/
 
 public class Main{
    public static void main(String[] args) {
@@ -409,4 +404,18 @@ public class Main{
    }
 }
 
+ */
+// Reverse  a string in java
+public class Main {
 
+    public static void main(String[] args) {
+        String name = "123";
+        StringBuilder reverse = new StringBuilder();
+
+        for (int i = name.length() - 1; i >= 0; i--) {
+            reverse.append(name.charAt(i));
+        }
+        System.out.println(reverse);
+        System.out.println(name);
+    }
+}
