@@ -429,27 +429,37 @@ public class Main {
 
        
     // Fibonacci
-    int n=4;
-    if(n==0)
-      {
-         System.out.println("0");
-         return;
-      }
-    int first = 0,sec = 1;
-   //  System.out.print(first+" "+sec+" ");
-      int third = first + sec;
+   //  int n=4;
+   //  if(n==0)
+   //    {
+   //       System.out.println("0");
+   //       return;
+   //    }
+   //  int first = 0,sec = 1;
+   // //  System.out.print(first+" "+sec+" ");
+   //    int third = first + sec;
 
-   for(int i=2;i<n;i++)
-      {
-      third = first + sec;
-      // System.out.print(third+" ");
-      first = sec;
-      sec = third;
+   // for(int i=2;i<n;i++)
+   //    {
+   //    third = first + sec;
+   //    // System.out.print(third+" ");
+   //    first = sec;
+   //    sec = third;
       
-      }
-      System.out.print(third+" ");
+   //    }
+   //    System.out.print(third+" ");
 
  
+//   Palindrome (String)
+
+String name = "sus";
+
+String reverse = new  StringBuilder(name).reverse().toString();
+System.out.println(reverse);
+System.out.println(name.equals(reverse));
+
+
+
     }
 }
 
