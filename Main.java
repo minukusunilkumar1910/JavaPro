@@ -409,13 +409,50 @@ public class Main{
 public class Main {
 
     public static void main(String[] args) {
-        String name = "123";
-        StringBuilder reverse = new StringBuilder();
+      //   String name = "123";
+      //   StringBuilder reverse = new StringBuilder();
 
-        for (int i = name.length() - 1; i >= 0; i--) {
-            reverse.append(name.charAt(i));
-        }
-        System.out.println(reverse);
-        System.out.println(name);
+      //   for (int i = name.length() - 1; i >= 0; i--) {
+      //       reverse.append(name.charAt(i));
+      //   }
+      //   System.out.println(reverse);
+      //   System.out.println(name);
+
+
+    
+      // int a =10;
+      // int b=5;
+
+      // b=b+a;
+      // a=b-a;
+      // b=b-a;
+      // System.out.println(a);   
+      // System.out.println(b);   
+
+       
+    // Fibonacci
+    int n=4;
+    if(n==0)
+      {
+         System.out.println("0");
+         return;
+      }
+    int first = 0,sec = 1;
+   //  System.out.print(first+" "+sec+" ");
+      int third = first + sec;
+
+   for(int i=2;i<n;i++)
+      {
+      third = first + sec;
+      // System.out.print(third+" ");
+      first = sec;
+      sec = third;
+      
+      }
+      System.out.print(third+" ");
+
+ 
     }
 }
+
+
