@@ -452,11 +452,11 @@ public class Main {
  
 //   Palindrome (String)
 
-String name = "sus";
+// String name = "sus";
 
-String reverse = new  StringBuilder(name).reverse().toString();
-System.out.println(reverse);
-System.out.println(name.equals(reverse));
+// String reverse = new  StringBuilder(name).reverse().toString();
+// System.out.println(reverse);
+// System.out.println(name.equals(reverse));
 
 
 
