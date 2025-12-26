@@ -406,53 +406,91 @@ public class Main{
 
  */
 // Reverse  a string in java
-public class Main {
+// public class Main {
 
-    public static void main(String[] args) {
-      //   String name = "123";
-      //   StringBuilder reverse = new StringBuilder();
+//     public static void main(String[] args) {
+        //   String name = "123";
+        //   StringBuilder reverse = new StringBuilder();
 
-      //   for (int i = name.length() - 1; i >= 0; i--) {
-      //       reverse.append(name.charAt(i));
+        //   for (int i = name.length() - 1; i >= 0; i--) {
+        //       reverse.append(name.charAt(i));
+        //   }
+        //   System.out.println(reverse);
+        //   System.out.println(name);
+        // int a =10;
+        // int b=5;
+        // b=b+a;
+        // a=b-a;
+        // b=b-a;
+        // System.out.println(a);   
+        // System.out.println(b);   
+        // Fibonacci
+        //  int n=4;
+        //  if(n==0)
+        //    {
+        //       System.out.println("0");
+        //       return;
+        //    }
+        //  int first = 0,sec = 1;
+        // //  System.out.print(first+" "+sec+" ");
+        //    int third = first + sec;
+        // for(int i=2;i<n;i++)
+        //    {
+        //    third = first + sec;
+        //    // System.out.print(third+" ");
+        //    first = sec;
+        //    sec = third;
+        //    }
+        //    System.out.print(third+" ");
+//   Palindrome (String)
+// String name = "sus";
+// String reverse = new  StringBuilder(name).reverse().toString();
+// System.out.println(reverse);
+// System.out.println(name.equals(reverse));
+
+// Leap Year ---
+
+      //   int n = 2024;
+
+      //   if ((n % 4 == 0) && (n % 100 != 0) || (n % 400 == 0)) {
+      //       System.out.println("leap");
+      //   } else
+      //   {
+      //       System.out.println("normal");
       //   }
-      //   System.out.println(reverse);
-      //   System.out.println(name);
 
+   
+//     }
+// }
 
-    
-      // int a =10;
-      // int b=5;
-
-      // b=b+a;
-      // a=b-a;
-      // b=b-a;
-      // System.out.println(a);   
-      // System.out.println(b);   
-
-       
-    // Fibonacci
-    int n=4;
-    if(n==0)
-      {
-         System.out.println("0");
-         return;
-      }
-    int first = 0,sec = 1;
-   //  System.out.print(first+" "+sec+" ");
-      int third = first + sec;
-
-   for(int i=2;i<n;i++)
-      {
-      third = first + sec;
-      // System.out.print(third+" ");
-      first = sec;
-      sec = third;
+import java.util.Scanner;
+public class Main
+{
+   public static void main(String[] args) {
       
+      int num;
+      System.out.println("Enter a number");
+      Scanner sc = new Scanner(System.in);
+      num = sc.nextInt();
+      boolean result = evenOdd(num);
+      if(result == true)
+      {
+         System.out.println("It ia an Even");
       }
-      System.out.print(third+" ");
+      else
+      {
+         System.out.println("it is an Odd");
+      }
+   }
 
- 
-    }
+      static boolean evenOdd(int x)
+      {
+        if(x%2 == 0)
+        {
+         return true;
+        }
+        
+         return false;
+        
+      }
 }
-
-
