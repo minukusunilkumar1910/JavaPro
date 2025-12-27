@@ -462,35 +462,62 @@ public class Main{
    
 //     }
 // }
-
-import java.util.Scanner;
 public class Main
 {
    public static void main(String[] args) {
       
-      int num;
-      System.out.println("Enter a number");
-      Scanner sc = new Scanner(System.in);
-      num = sc.nextInt();
-      boolean result = evenOdd(num);
-      if(result == true)
+   //    int num;
+   //    System.out.println("Enter a number");
+   //    Scanner sc = new Scanner(System.in);
+   //    num = sc.nextInt();
+   //    boolean result = evenOdd(num);
+   //    if(result == true)
+   //    {
+   //       System.out.println("It ia an Even");
+   //    }
+   //    else
+   //    {
+   //       System.out.println("it is an Odd");
+   //    }
+   // }
+   
+   //    static boolean evenOdd(int x)
+   //    {
+   //      if(x%2 == 0)
+   //      {
+   //       return true;
+   //      }
+        
+   //       return false;
+            
+       
+   int n = 5;
+   
+   
+   if(n<2)
       {
-         System.out.println("It ia an Even");
+         System.out.println("Not  a Prime");
+         return;
       }
-      else
+      
+      boolean isPrime = true;
+   for(int i= 2 ; i*i<= n ;i++)
+   {
+      if(n%i == 0)
       {
-         System.out.println("it is an Odd");
+         isPrime = false;
+         break;
       }
    }
+  if(isPrime)
+  {
+   System.out.println("It is prime");
+  }
+  else
+  {
+   System.out.println("Not a prime");
+  }
 
-      static boolean evenOdd(int x)
-      {
-        if(x%2 == 0)
-        {
-         return true;
-        }
-        
-         return false;
-        
-      }
+
+ }
 }
