@@ -1,8 +1,4 @@
 
-import java.util.Arrays;
-
-
-// {
 //    public static void main(String[] args) {
 //       System.out.println("Hello");
 //    }
@@ -463,6 +459,9 @@ public class Main{
    
 //     }
 // }
+
+import java.util.Arrays;
+
 public class Main
 {
    public static void main(String[] args) {
@@ -521,20 +520,36 @@ public class Main
 
 
 
-int[] arr1 ={15,10,12};
+// int[] arr1 ={15,10,12};
 
-int n = arr1.length;
-int[] arr2 = new int[n];
+// int n = arr1.length;
+// int[] arr2 = new int[n];
 
-for(int i=0;i<n;i++)
+// for(int i=0;i<n;i++)
+// {
+//    arr2[i] = arr1[i];
+// }
+
+// for(int i :arr2)
+// {
+//    System.out.println(Arrays.toString(arr2));
+// }
+
+
+int[] arr1 = {1,2,3,4,5};
+
+int s = 0;
+int e = arr1.length-1;
+int[] arr2 = new int[arr1.length];
+
+for(int i=0;i<arr1.length;i++)
 {
-   arr2[i] = arr1[i];
+  arr2[s] = arr1[e];
+  s++;
+  e--;
 }
 
-for(int i :arr2)
-{
-   System.out.println(Arrays.toString(arr2));
-}
+   System.out.print(Arrays.toString(arr2));
 
  }
 }
