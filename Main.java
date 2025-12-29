@@ -1,4 +1,7 @@
 
+import java.util.Arrays;
+
+
 // {
 //    public static void main(String[] args) {
 //       System.out.println("Hello");
@@ -489,33 +492,49 @@ public class Main
    //       return false;
             
        
-   int n = 5;
+   // int n = 5;
    
    
-   if(n<2)
-      {
-         System.out.println("Not  a Prime");
-         return;
-      }
+//    if(n<2)
+//       {
+//          System.out.println("Not  a Prime");
+//          return;
+//       }
       
-      boolean isPrime = true;
-   for(int i= 2 ; i*i<= n ;i++)
-   {
-      if(n%i == 0)
-      {
-         isPrime = false;
-         break;
-      }
-   }
-  if(isPrime)
-  {
-   System.out.println("It is prime");
-  }
-  else
-  {
-   System.out.println("Not a prime");
-  }
+//       boolean isPrime = true;
+//    for(int i= 2 ; i*i<= n ;i++)
+//    {
+//       if(n%i == 0)
+//       {
+//          isPrime = false;
+//          break;
+//       }
+//    }
+//   if(isPrime)
+//   {
+//    System.out.println("It is prime");
+//   }
+//   else
+//   {
+//    System.out.println("Not a prime");
+//   }
 
+
+
+int[] arr1 ={15,10,12};
+
+int n = arr1.length;
+int[] arr2 = new int[n];
+
+for(int i=0;i<n;i++)
+{
+   arr2[i] = arr1[i];
+}
+
+for(int i :arr2)
+{
+   System.out.println(Arrays.toString(arr2));
+}
 
  }
 }
