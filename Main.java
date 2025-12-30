@@ -459,9 +459,7 @@ public class Main{
    
 //     }
 // }
-
-import java.util.Arrays;
-
+import java.util.*;
 public class Main
 {
    public static void main(String[] args) {
@@ -535,21 +533,48 @@ public class Main
 //    System.out.println(Arrays.toString(arr2));
 // }
 
+// reverse 
 
-int[] arr1 = {1,2,3,4,5};
+// int[] arr1 = {1,2,3,4,5};
 
-int s = 0;
-int e = arr1.length-1;
-int[] arr2 = new int[arr1.length];
+// int s = 0;
+// int e = arr1.length-1;
+// int[] arr2 = new int[arr1.length];
 
-for(int i=0;i<arr1.length;i++)
+// for(int i=0;i<arr1.length;i++)
+// {
+//   arr2[s] = arr1[e];
+//   s++;
+//   e--;
+// }
+
+//    System.out.print(Arrays.toString(arr2));
+
+
+// even-odd 
+int[] arr = {12,14,15,21};
+int n = arr.length;
+int[] even = new int[n];
+int[] odd = new int[n];
+int eindex = 0,oindex = 0;
+for(int i = 0;i<n;i++)
 {
-  arr2[s] = arr1[e];
-  s++;
-  e--;
+if(arr[i] % 2== 0)
+{
+   even[eindex] = arr[i];
+   eindex++;
 }
 
-   System.out.print(Arrays.toString(arr2));
+else
+{
+   odd[oindex] = arr[i];
+   oindex++;
+}
 
+}
+
+System.out.println(Arrays.toString(arr)+" ");
+System.out.println(Arrays.toString(even)+" ");
+System.out.println(Arrays.toString(odd)+" ");
  }
 }
