@@ -1,5 +1,4 @@
 
-//    public static void main(String[] args) {
 //       System.out.println("Hello");
 //    }
 // }
@@ -552,29 +551,67 @@ public class Main
 
 
 // even-odd 
-int[] arr = {12,14,15,21};
-int n = arr.length;
-int[] even = new int[n];
-int[] odd = new int[n];
-int eindex = 0,oindex = 0;
-for(int i = 0;i<n;i++)
+
+// int[] arr = {12,14,15,21};
+// int n = arr.length;
+// int[] even = new int[n];
+// int[] odd = new int[n];
+// int eindex = 0,oindex = 0;
+// for(int i = 0;i<n;i++)
+// {
+// if(arr[i] % 2== 0)
+// {
+//    even[eindex] = arr[i];
+//    eindex++;
+// }
+
+// else
+// {
+//    odd[oindex] = arr[i];
+//    oindex++;
+// }
+
+// }
+
+// System.out.println(Arrays.toString(arr)+" ");
+// System.out.println(Arrays.toString(even)+" ");
+// System.out.println(Arrays.toString(odd)+" ");
+
+
+//1.1 Merge two Arrays
+// int[] a = {1,2,3,4,5};
+// int[] b = {6,7,8,9,0};
+// int n = a.length,m = b.length;
+// int merge[] = new int[m+n];
+
+// int index = 0;
+
+// for(int i =0;i<n;i++)
+// {
+//    merge[index] = a[i];
+//    index++;
+// }
+// for(int j=0;j<m;j++)
+// {
+//    merge[index] = b[j];
+//    index++;
+// }
+// System.out.println(Arrays.toString(merge));
+
+//1.2 Merge Two Arrays
+int[] a = {1,2,3,4,5};
+int[] b = {6,7,8,9,0};
+int n = a.length,m = b.length;
+int merge[] = new int[m+n];
+
+int index = n;
+for(int i =0;i<n;i++)
 {
-if(arr[i] % 2== 0)
-{
-   even[eindex] = arr[i];
-   eindex++;
+   merge[i] = a[i];
+   merge[index] = b[i];
+   index++;
 }
 
-else
-{
-   odd[oindex] = arr[i];
-   oindex++;
-}
-
-}
-
-System.out.println(Arrays.toString(arr)+" ");
-System.out.println(Arrays.toString(even)+" ");
-System.out.println(Arrays.toString(odd)+" ");
+System.out.println(Arrays.toString(merge));
  }
 }
