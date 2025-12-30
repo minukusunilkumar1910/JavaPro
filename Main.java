@@ -458,7 +458,6 @@ public class Main{
    
 //     }
 // }
-import java.util.*;
 public class Main
 {
    public static void main(String[] args) {
@@ -577,7 +576,7 @@ public class Main
 // System.out.println(Arrays.toString(even)+" ");
 // System.out.println(Arrays.toString(odd)+" ");
 
-
+ 
 //1.1 Merge two Arrays
 // int[] a = {1,2,3,4,5};
 // int[] b = {6,7,8,9,0};
@@ -613,5 +612,6 @@ for(int i =0;i<n;i++)
 }
 
 System.out.println(Arrays.toString(merge));
+
  }
 }
