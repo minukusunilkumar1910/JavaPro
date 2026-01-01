@@ -597,21 +597,49 @@ public class Main
 // }
 // System.out.println(Arrays.toString(merge));
 
-//1.2 Merge Two Arrays
-int[] a = {1,2,3,4,5};
-int[] b = {6,7,8,9,0};
-int n = a.length,m = b.length;
-int merge[] = new int[m+n];
+// //1.2 Merge Two Arrays
+// int[] a = {1,2,3,4,5};
+// int[] b = {6,7,8,9,0};
+// int n = a.length,m = b.length;
+// int merge[] = new int[m+n];
 
-int index = n;
-for(int i =0;i<n;i++)
+// int index = n;
+// for(int i =0;i<n;i++)
+// {
+//    merge[i] = a[i];
+//    merge[index] = b[i];
+//    index++;
+// }
+
+// System.out.println(Arrays.toString(merge));
+
+
+// Largest and Smallest 
+int[] arr = {10,-90,220};
+int n = arr.length;
+
+int largest = arr[0];
+int smallest = arr[0];
+for(int i =1;i<n;i++)
 {
-   merge[i] = a[i];
-   merge[index] = b[i];
-   index++;
+   if(arr[i] > largest)
+   {
+      largest = arr[i];
+
+   }
 }
 
-System.out.println(Arrays.toString(merge));
+for(int j = 0;j<n;j++)
+{
+   if(arr[j] < smallest)
+   {
+      smallest = arr[j];
+   }
+}
+ System.out.println(largest);
+ System.out.println(smallest);
+
+
 
  }
 }
