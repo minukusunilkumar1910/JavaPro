@@ -458,6 +458,7 @@ public class Main{
    
 //     }
 // }
+
 public class Main
 {
    public static void main(String[] args) {
@@ -614,32 +615,46 @@ public class Main
 // System.out.println(Arrays.toString(merge));
 
 
-// Largest and Smallest 
-int[] arr = {10,-90,220};
-int n = arr.length;
+// Largest and Smallest
 
-int largest = arr[0];
-int smallest = arr[0];
-for(int i =1;i<n;i++)
+// int[] arr = {10,-90,220};
+// int n = arr.length;
+
+// int largest = arr[0];
+// int smallest = arr[0];
+// for(int i =1;i<n;i++)
+// {
+//    if(arr[i] > largest)
+//    {
+//       largest = arr[i];
+
+//    }
+// }
+
+// for(int j = 0;j<n;j++)
+// {
+//    if(arr[j] < smallest)
+//    {
+//       smallest = arr[j];
+//    }
+// }
+//  System.out.println(largest);
+//  System.out.println(smallest);
+
+
+
+// Delete an Element 
+
+int[] arr = {31,24,55,10,20,30,40,50};
+
+int pos = 2;
+for(int i=pos+1;i<arr.length;i++)
 {
-   if(arr[i] > largest)
-   {
-      largest = arr[i];
-
-   }
+  arr[i-1] = arr[i];
 }
-
-for(int j = 0;j<n;j++)
+for(int i =0;i<arr.length - 1;i++)
 {
-   if(arr[j] < smallest)
-   {
-      smallest = arr[j];
-   }
+   System.out.print(arr[i]+" ");
 }
- System.out.println(largest);
- System.out.println(smallest);
-
-
-
  }
-}
+}  
