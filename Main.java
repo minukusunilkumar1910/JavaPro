@@ -461,8 +461,6 @@ public class Main{
 //     }
 // }
 
-import java.util.Arrays;
-
 public class Main
 {
    public static void main(String[] args) {
@@ -649,7 +647,7 @@ public class Main
 
 // Delete an Element 
 
-// int[] arr = {31,24,55,10,20,30,40,50};
+// int[] arr = {31,24,55,10,20,30,40,5};
 
 // int pos = 2;
 // for(int i=pos+1;i<arr.length;i++)
@@ -662,17 +660,43 @@ public class Main
 // }
 
 
-int[] nums = {1,2,1};
-int n = nums.length;
-int ans[] = new int[n+n];
+// Concatinate the Array
+
+// int[] nums = {1,2,1};
+// int n = nums.length;
+// int ans[] = new int[n+n];
 
  
-   for(int i=0;i<n;i++)
-   {
-      ans[i] = nums[i];
-      ans[i+n] = nums[i];
-   }
+//    for(int i=0;i<n;i++)
+//    {
+//       ans[i] = nums[i];
+//       ans[i+n] = nums[i];
+//    }
 
-System.out.println(Arrays.toString(ans));
- }
+//   System.out.println(Arrays.toString(ans));
+ 
+// 2 largest number
+int [] arr = {-1,-1,-19,-1,-8};
+int n = arr.length;
+int max = Integer.MIN_VALUE;
+int secmax = Integer.MIN_VALUE;
+
+for(int i = 0;i<n;i++)
+{
+   if(arr[i] > max )
+   {
+      secmax = max;
+      max = arr[i];
+   }
+   else if(arr[i] > secmax && arr[i] != max)
+   {
+      secmax = arr[i];
+   }
+}
+
+
+System.out.println(max);
+System.out.println(secmax);
+
+}
 }  
