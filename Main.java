@@ -676,27 +676,52 @@ public class Main
 //   System.out.println(Arrays.toString(ans));
  
 // 2 largest number
-int [] arr = {-1,-1,-19,-1,-8};
-int n = arr.length;
-int max = Integer.MIN_VALUE;
-int secmax = Integer.MIN_VALUE;
+// int [] arr = {-1,-1,-19,-1,-8};
+// int n = arr.length;
+// int max = Integer.MIN_VALUE;
+// int secmax = Integer.MIN_VALUE;
 
-for(int i = 0;i<n;i++)
+// for(int i = 0;i<n;i++)
+// {
+//    if(arr[i] > max )
+//    {
+//       secmax = max;
+//       max = arr[i];
+//    }
+//    else if(arr[i] > secmax && arr[i] != max)
+//    {
+//       secmax = arr[i];
+//    }
+// }
+
+
+// System.out.println(max);
+// System.out.println(secmax);
+
+// Search the Element
+int[] arr = {5,4,3,4,1,3,15};
+int n= arr.length;
+int target = 15;
+boolean flag = false;
+int index = arr[0];
+
+for(int i =0;i<n;i++)
 {
-   if(arr[i] > max )
+   if(arr[i] == target)
    {
-      secmax = max;
-      max = arr[i];
+      index = i+1;
+      flag = true;
+      break;
    }
-   else if(arr[i] > secmax && arr[i] != max)
-   {
-      secmax = arr[i];
-   }
+   
+}   
+if(flag == true)
+{
+   System.out.println("Target found at "+index);
 }
-
-
-System.out.println(max);
-System.out.println(secmax);
+else{
+   System.out.println("Not  found");
+}
 
 }
 }  
