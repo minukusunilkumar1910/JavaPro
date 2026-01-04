@@ -697,29 +697,32 @@ public class Main
 // System.out.println(secmax);
 
 // Search the Element
-int[] arr = {5,4,3,4,1,3,15};
-int n= arr.length;
-int target = 15;
-boolean flag = false;
-int index = arr[0];
+// int[] arr = {5,4,3,4,1,3,15};
+// int n= arr.length;
+// int target = 15;
+// boolean flag = false;
+// int index = arr[0];
 
-for(int i =0;i<n;i++)
-{
-   if(arr[i] == target)
-   {
-      index = i+1;
-      flag = true;
-      break;
-   }
+// for(int i =0;i<n;i++)
+// {
+//    if(arr[i] == target)
+//    {
+//       index = i+1;
+//       flag = true;
+//       break;
+//    }
    
-}   
-if(flag == true)
-{
-   System.out.println("Target found at "+index);
-}
-else{
-   System.out.println("Not  found");
-}
+// }   
+// if(flag == true)
+// {
+//    System.out.println("Target found at "+index);
+// }
+// else{
+//    System.out.println("Not  found");
+// }
+
+
+
 
 }
 }  
