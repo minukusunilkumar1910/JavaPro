@@ -458,7 +458,6 @@ public class Main{
    
 //     }
 // }
-
 public class Main
 {
    public static void main(String[] args) {
@@ -722,7 +721,36 @@ public class Main
 // }
 
 
+int[] arr = {1,1,1,0};
+
+int n = arr.length;
+
+// int decVal = 0;
+// for(int i = 0;i< arr.length;i++)
+// {
+//   int val = arr[i];
+//   decVal  +=  val * Math.pow(2,n-1);
+//   n--;
+// }
+//  System.out.println(decVal);
 
 
+int result = BinaryToDec(arr);
+
+System.out.println(result);
+
+}
+public static int BinaryToDec(int[] arr)
+{
+   int decVal = 0;
+   int n = arr.length;
+
+   for(int i=0;i<arr.length;i++)
+   {
+      int val = arr[i];
+      decVal += val * Math.pow(2,n-1);
+      n--;
+   }
+   return decVal;
 }
 }  
