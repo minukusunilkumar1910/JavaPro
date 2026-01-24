@@ -458,9 +458,9 @@ public class Main{
    
 //     }
 // }
-public class Main
-{
-   public static void main(String[] args) {
+// public class Main
+// {
+//    public static void main(String[] args) {
       
    //    int num;
    //    System.out.println("Enter a number");
@@ -721,9 +721,9 @@ public class Main
 // }
 
 
-int[] arr = {1,1,1,0};
+// int[] arr = {1,1,1,0};
 
-int n = arr.length;
+// int n = arr.length;
 
 // int decVal = 0;
 // for(int i = 0;i< arr.length;i++)
@@ -735,22 +735,91 @@ int n = arr.length;
 //  System.out.println(decVal);
 
 
-int result = BinaryToDec(arr);
+// int result = BinaryToDec(arr);
 
-System.out.println(result);
+// System.out.println(result);
 
-}
-public static int BinaryToDec(int[] arr)
+// }
+// public static int BinaryToDec(int[] arr)
+// {
+//    int decVal = 0;
+//    int n = arr.length;
+
+//    for(int i=0;i<arr.length;i++)
+//    {
+//       int val = arr[i];
+//       decVal += val * Math.pow(2,n-1);
+//       n--;
+//    }
+//    return decVal;
+// }
+// }  
+
+
+//-----------------------------------------24/01/26 ------------------------------------------------------------------------------------------
+
+class Main
 {
-   int decVal = 0;
-   int n = arr.length;
-
-   for(int i=0;i<arr.length;i++)
+   public static void main(String[] args) 
    {
-      int val = arr[i];
-      decVal += val * Math.pow(2,n-1);
-      n--;
+      int n = 100;
+      boolean result = prime(n);
+      int c = 0;
+       for(int i = 2;i<=n;i++)
+       {
+         if(prime(i))
+         {
+            System.out.print(i+" ");
+            c++;
+         }
+      }
+      // System.out.println(result ? "Prime" : "Not prime");
+      System.out.println("\n count = "+c);
+
+
+
+
+      // boolean isPrime = true;
+
+      // if(n<2)
+      // {
+      //    System.out.println("Not a Prime");
+      //    return;
+      // }
+
+      // for(int i = 2;i*i<=n;i++)
+      // {
+      //    if(n%i == 0)
+      //    {
+      //       isPrime = false;
+      //       break;
+
+      //    }
+      // }
+ 
+
+
+
    }
-   return decVal;
-}
-}  
+     public static boolean prime(int n)
+     {
+      boolean isPrime = true;
+      if(n < 2)
+      {
+         return false;
+      }
+
+      for(int i =2;i*i <= n;i++)
+      {
+         if(n%i ==0 )
+         {
+            isPrime = false;
+            break;
+         }
+      }
+      return isPrime;
+     }
+
+   }
+
+
