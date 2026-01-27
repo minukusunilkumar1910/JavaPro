@@ -402,99 +402,84 @@ public class Main{
  */
 // Reverse  a string in java
 // public class Main {
-
 //     public static void main(String[] args) {
-        //   String name = "123";
-        //   StringBuilder reverse = new StringBuilder();
-
-        //   for (int i = name.length() - 1; i >= 0; i--) {
-        //       reverse.append(name.charAt(i));
-        //   }
-        //   System.out.println(reverse);
-        //   System.out.println(name);
-        // int a =10;
-        // int b=5;
-        // b=b+a;
-        // a=b-a;
-        // b=b-a;
-        // System.out.println(a);   
-        // System.out.println(b);   
-        // Fibonacci
-        //  int n=4;
-        //  if(n==0)
-        //    {
-        //       System.out.println("0");
-        //       return;
-        //    }
-        //  int first = 0,sec = 1;
-        // //  System.out.print(first+" "+sec+" ");
-        //    int third = first + sec;
-        // for(int i=2;i<n;i++)
-        //    {
-        //    third = first + sec;
-        //    // System.out.print(third+" ");
-        //    first = sec;
-        //    sec = third;
-        //    }
-        //    System.out.print(third+" ");
+//   String name = "123";
+//   StringBuilder reverse = new StringBuilder();
+//   for (int i = name.length() - 1; i >= 0; i--) {
+//       reverse.append(name.charAt(i));
+//   }
+//   System.out.println(reverse);
+//   System.out.println(name);
+// int a =10;
+// int b=5;
+// b=b+a;
+// a=b-a;
+// b=b-a;
+// System.out.println(a);   
+// System.out.println(b);   
+// Fibonacci
+//  int n=4;
+//  if(n==0)
+//    {
+//       System.out.println("0");
+//       return;
+//    }
+//  int first = 0,sec = 1;
+// //  System.out.print(first+" "+sec+" ");
+//    int third = first + sec;
+// for(int i=2;i<n;i++)
+//    {
+//    third = first + sec;
+//    // System.out.print(third+" ");
+//    first = sec;
+//    sec = third;
+//    }
+//    System.out.print(third+" ");
 //   Palindrome (String)
 // String name = "sus";
 // String reverse = new  StringBuilder(name).reverse().toString();
 // System.out.println(reverse);
 // System.out.println(name.equals(reverse));
-
 // Leap Year ---
-
-      //   int n = 2024;
-
-      //   if ((n % 4 == 0) && (n % 100 != 0) || (n % 400 == 0)) {
-      //       System.out.println("leap");
-      //   } else
-      //   {
-      //       System.out.println("normal");
-      //   }
-
-   
+//   int n = 2024;
+//   if ((n % 4 == 0) && (n % 100 != 0) || (n % 400 == 0)) {
+//       System.out.println("leap");
+//   } else
+//   {
+//       System.out.println("normal");
+//   }
 //     }
 // }
 // public class Main
 // {
 //    public static void main(String[] args) {
-      
-   //    int num;
-   //    System.out.println("Enter a number");
-   //    Scanner sc = new Scanner(System.in);
-   //    num = sc.nextInt();
-   //    boolean result = evenOdd(num);
-   //    if(result == true)
-   //    {
-   //       System.out.println("It ia an Even");
-   //    }
-   //    else
-   //    {
-   //       System.out.println("it is an Odd");
-   //    }
-   // }
-   
-   //    static boolean evenOdd(int x)
-   //    {
-   //      if(x%2 == 0)
-   //      {
-   //       return true;
-   //      }
-        
-   //       return false;
-            
-       
-   // int n = 5;
-   
-   
+//    int num;
+//    System.out.println("Enter a number");
+//    Scanner sc = new Scanner(System.in);
+//    num = sc.nextInt();
+//    boolean result = evenOdd(num);
+//    if(result == true)
+//    {
+//       System.out.println("It ia an Even");
+//    }
+//    else
+//    {
+//       System.out.println("it is an Odd");
+//    }
+// }
+//    static boolean evenOdd(int x)
+//    {
+//      if(x%2 == 0)
+//      {
+//       return true;
+//      }
+//       return false;
+// int n = 5;
 //    if(n<2)
 //       {
 //          System.out.println("Not  a Prime");
 //          return;
 //       }
-      
 //       boolean isPrime = true;
 //    for(int i= 2 ; i*i<= n ;i++)
 //    {
@@ -512,44 +497,30 @@ public class Main{
 //   {
 //    System.out.println("Not a prime");
 //   }
-
-
-
 // int[] arr1 ={15,10,12};
-
 // int n = arr1.length;
 // int[] arr2 = new int[n];
-
 // for(int i=0;i<n;i++)
 // {
 //    arr2[i] = arr1[i];
 // }
-
 // for(int i :arr2)
 // {
 //    System.out.println(Arrays.toString(arr2));
 // }
-
 // reverse 
-
 // int[] arr1 = {1,2,3,4,5};
-
 // int s = 0;
 // int e = arr1.length-1;
 // int[] arr2 = new int[arr1.length];
-
 // for(int i=0;i<arr1.length;i++)
 // {
 //   arr2[s] = arr1[e];
 //   s++;
 //   e--;
 // }
-
 //    System.out.print(Arrays.toString(arr2));
-
-
 // even-odd 
-
 // int[] arr = {12,14,15,21};
 // int n = arr.length;
 // int[] even = new int[n];
@@ -562,28 +533,21 @@ public class Main{
 //    even[eindex] = arr[i];
 //    eindex++;
 // }
-
 // else
 // {
 //    odd[oindex] = arr[i];
 //    oindex++;
 // }
-
 // }
-
 // System.out.println(Arrays.toString(arr)+" ");
 // System.out.println(Arrays.toString(even)+" ");
 // System.out.println(Arrays.toString(odd)+" ");
-
- 
 //1.1 Merge two Arrays
 // int[] a = {1,2,3,4,5};
 // int[] b = {6,7,8,9,0};
 // int n = a.length,m = b.length;
 // int merge[] = new int[m+n];
-
 // int index = 0;
-
 // for(int i =0;i<n;i++)
 // {
 //    merge[index] = a[i];
@@ -595,13 +559,11 @@ public class Main{
 //    index++;
 // }
 // System.out.println(Arrays.toString(merge));
-
 // //1.2 Merge Two Arrays
 // int[] a = {1,2,3,4,5};
 // int[] b = {6,7,8,9,0};
 // int n = a.length,m = b.length;
 // int merge[] = new int[m+n];
-
 // int index = n;
 // for(int i =0;i<n;i++)
 // {
@@ -609,15 +571,10 @@ public class Main{
 //    merge[index] = b[i];
 //    index++;
 // }
-
 // System.out.println(Arrays.toString(merge));
-
-
 // Largest and Smallest
-
 // int[] arr = {10,-90,220};
 // int n = arr.length;
-
 // int largest = arr[0];
 // int smallest = arr[0];
 // for(int i =1;i<n;i++)
@@ -625,10 +582,8 @@ public class Main{
 //    if(arr[i] > largest)
 //    {
 //       largest = arr[i];
-
 //    }
 // }
-
 // for(int j = 0;j<n;j++)
 // {
 //    if(arr[j] < smallest)
@@ -638,13 +593,8 @@ public class Main{
 // }
 //  System.out.println(largest);
 //  System.out.println(smallest);
-
-
-
 // Delete an Element 
-
 // int[] arr = {31,24,55,10,20,30,40,5};
-
 // int pos = 2;
 // for(int i=pos+1;i<arr.length;i++)
 // {
@@ -654,29 +604,21 @@ public class Main{
 // {
 //    System.out.print(arr[i]+" ");
 // }
-
-
 // Concatinate the Array
-
 // int[] nums = {1,2,1};
 // int n = nums.length;
 // int ans[] = new int[n+n];
-
- 
 //    for(int i=0;i<n;i++)
 //    {
 //       ans[i] = nums[i];
 //       ans[i+n] = nums[i];
 //    }
-
 //   System.out.println(Arrays.toString(ans));
- 
 // 2 largest number
 // int [] arr = {-1,-1,-19,-1,-8};
 // int n = arr.length;
 // int max = Integer.MIN_VALUE;
 // int secmax = Integer.MIN_VALUE;
-
 // for(int i = 0;i<n;i++)
 // {
 //    if(arr[i] > max )
@@ -689,18 +631,14 @@ public class Main{
 //       secmax = arr[i];
 //    }
 // }
-
-
 // System.out.println(max);
 // System.out.println(secmax);
-
 // Search the Element
 // int[] arr = {5,4,3,4,1,3,15};
 // int n= arr.length;
 // int target = 15;
 // boolean flag = false;
 // int index = arr[0];
-
 // for(int i =0;i<n;i++)
 // {
 //    if(arr[i] == target)
@@ -709,7 +647,6 @@ public class Main{
 //       flag = true;
 //       break;
 //    }
-   
 // }   
 // if(flag == true)
 // {
@@ -718,12 +655,8 @@ public class Main{
 // else{
 //    System.out.println("Not  found");
 // }
-
-
 // int[] arr = {1,1,1,0};
-
 // int n = arr.length;
-
 // int decVal = 0;
 // for(int i = 0;i< arr.length;i++)
 // {
@@ -732,18 +665,13 @@ public class Main{
 //   n--;
 // }
 //  System.out.println(decVal);
-
-
 // int result = BinaryToDec(arr);
-
 // System.out.println(result);
-
 // }
 // public static int BinaryToDec(int[] arr)
 // {
 //    int decVal = 0;
 //    int n = arr.length;
-
 //    for(int i=0;i<arr.length;i++)
 //    {
 //       int val = arr[i];
@@ -753,72 +681,124 @@ public class Main{
 //    return decVal;
 // }
 // }  
-
-
 //-----------------------------------------24/01/26 ------------------------------------------------------------------------------------------
+// import java.util.Arrays;
+// class Main
+// {
+//    public static void main(String[] args) 
+//    {
+//       int n = 100;
+//       boolean result = prime(n);
+//       int c = 0;
+//        for(int i = 2;i<=n;i++)
+//        {
+//          if(prime(i))
+//          {
+//             System.out.print(i+" ");
+//             c++;
+//          }
+//       }
+//       // System.out.println(result ? "Prime" : "Not prime");
+//       // System.out.println("\n count = "+c);
+//       // boolean isPrime = true;
+//       // if(n<2)
+//       // {
+//       //    System.out.println("Not a Prime");
+//       //    return;
+//       // }
+//       // for(int i = 2;i*i<=n;i++)
+//       // {
+//       //    if(n%i == 0)
+//       //    {
+//       //       isPrime = false;
+//       //       break;
+//       //    }
+//       // }
+//    }
+//      public static boolean prime(int n)
+//      {
+//       boolean isPrime = true;
+//       if(n < 2)
+//       {
+//          return false;
+//       }
+//       for(int i =2;i*i <= n;i++)
+//       {
+//          if(n%i ==0 )
+//          {
+//             isPrime = false;
+//             break;
+//          }
+//       }
+//       return isPrime;
+//      }
+//    }
+import java.util.ArrayList;
 
-class Main
-{
-   public static void main(String[] args) 
-   {
-      int n = 100;
-      boolean result = prime(n);
-      int c = 0;
-       for(int i = 2;i<=n;i++)
-       {
-         if(prime(i))
-         {
-            System.out.print(i+" ");
-            c++;
-         }
-      }
-      // System.out.println(result ? "Prime" : "Not prime");
-      System.out.println("\n count = "+c);
+class Main {
 
+    public static void main(String[] args) {
 
+        int[] arr = {1, 2, 3};
+        int key = 5;
 
+        //  int[] res = rotateArr(arr, d);
+        //  System.out.println(Arrays.toString(res));
+        int[] res = occurance(arr, key);
 
-      // boolean isPrime = true;
+        permutation(arr);
+//  System.out.println(Arrays.toString(res));
 
-      // if(n<2)
-      // {
-      //    System.out.println("Not a Prime");
-      //    return;
-      // }
+    }
 
-      // for(int i = 2;i*i<=n;i++)
-      // {
-      //    if(n%i == 0)
-      //    {
-      //       isPrime = false;
-      //       break;
+    public static int[] rotateArr(int[] arr, int d) {
 
-      //    }
-      // }
- 
+        int n = arr.length;
+        if (d == 0 || d > n) {
+            return arr;
+        }
 
+        while (d > 0) {
+            int extra = arr[0];
+            for (int j = 1; j < n; j++) {
+                arr[j - 1] = arr[j];
+            }
+            arr[n - 1] = extra;
+            d--;
+        }
 
+        return arr;
+    }
 
-   }
-     public static boolean prime(int n)
-     {
-      boolean isPrime = true;
-      if(n < 2)
-      {
-         return false;
-      }
+    public static int[] occurance(int[] arr, int key) {
+        int n = arr.length;
+        int[] nums = new int[n];
 
-      for(int i =2;i*i <= n;i++)
-      {
-         if(n%i ==0 )
-         {
-            isPrime = false;
-            break;
-         }
-      }
-      return isPrime;
-     }
+        int i = 1;
+        while (i < n) {
+            if (key == arr[i - 1]) {
+                nums[i] = arr[i - 1];
+                arr[i - 1] = arr[i];
+            }
 
-   }
+            i++;
+        }
+        return nums;
+    }
 
+    public static void permutation(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                ArrayList<Integer> list = new ArrayList<>();
+                for (int k = i; k <= j; k++) {
+                    list.add(arr[k]);
+                }
+                System.out.print(list + " ");
 
+            }
+        }
+
+    }
+
+}
