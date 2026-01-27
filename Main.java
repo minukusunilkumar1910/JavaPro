@@ -758,68 +758,111 @@ public class Main{
 
 //-----------------------------------------24/01/26 ------------------------------------------------------------------------------------------
 
-class Main
-{
-   public static void main(String[] args) 
-   {
-      int n = 100;
-      boolean result = prime(n);
-      int c = 0;
-       for(int i = 2;i<=n;i++)
-       {
-         if(prime(i))
-         {
-            System.out.print(i+" ");
-            c++;
-         }
-      }
-      // System.out.println(result ? "Prime" : "Not prime");
-      System.out.println("\n count = "+c);
+// import java.util.Arrays;
+
+// class Main
+// {
+//    public static void main(String[] args) 
+//    {
+//       int n = 100;
+//       boolean result = prime(n);
+//       int c = 0;
+//        for(int i = 2;i<=n;i++)
+//        {
+//          if(prime(i))
+//          {
+//             System.out.print(i+" ");
+//             c++;
+//          }
+//       }
+//       // System.out.println(result ? "Prime" : "Not prime");
+//       // System.out.println("\n count = "+c);
 
 
 
 
-      // boolean isPrime = true;
+//       // boolean isPrime = true;
 
-      // if(n<2)
-      // {
-      //    System.out.println("Not a Prime");
-      //    return;
-      // }
+//       // if(n<2)
+//       // {
+//       //    System.out.println("Not a Prime");
+//       //    return;
+//       // }
 
-      // for(int i = 2;i*i<=n;i++)
-      // {
-      //    if(n%i == 0)
-      //    {
-      //       isPrime = false;
-      //       break;
+//       // for(int i = 2;i*i<=n;i++)
+//       // {
+//       //    if(n%i == 0)
+//       //    {
+//       //       isPrime = false;
+//       //       break;
 
-      //    }
-      // }
+//       //    }
+//       // }
  
 
 
 
-   }
-     public static boolean prime(int n)
+
+
+
+//    }
+//      public static boolean prime(int n)
+//      {
+//       boolean isPrime = true;
+//       if(n < 2)
+//       {
+//          return false;
+//       }
+
+//       for(int i =2;i*i <= n;i++)
+//       {
+//          if(n%i ==0 )
+//          {
+//             isPrime = false;
+//             break;
+//          }
+//       }
+//       return isPrime;
+//      }
+
+    
+
+//    }
+
+
+import java.util.*;
+
+   class Main
+   {
+      public static void main(String[] args) {
+          
+    int[] arr = {1,2,3,4,5,6,7};
+    int d=5;
+
+    int[] res = rotateArr(arr, d);
+    System.out.println(Arrays.toString(res));
+
+      }
+       public static int[] rotateArr(int[] arr,int d)
      {
-      boolean isPrime = true;
-      if(n < 2)
-      {
-         return false;
-      }
 
-      for(int i =2;i*i <= n;i++)
+        int n= arr.length;
+      if(d==0 || d>n)
       {
-         if(n%i ==0 )
+         return arr;
+      }
+      
+        while(d>0)
          {
-            isPrime = false;
-            break;
+           int extra = arr[0];
+          for(int j = 1;j<n;j++)
+          {
+            arr[j-1] = arr[j];
          }
-      }
-      return isPrime;
+         arr[n-1] = extra;
+         d--;
+        }
+
+        return arr;
      }
-
    }
-
-
