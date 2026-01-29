@@ -1,5 +1,4 @@
 
-
 class Node
 {
    int data;
@@ -148,5 +147,7 @@ public class Linkedlist {
       linkedlist.deleteRandom(400);
       linkedlist.deletelast();
       linkedlist.display();
+
+      
    }
 }

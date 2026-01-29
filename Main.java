@@ -749,9 +749,27 @@ class Main {
 
       //   permutation(arr);
 //  System.out.println(Arrays.toString(res));
-       duplicates(arr);
-    
+      //  duplicates(arr);
+ 
+     sumNum("123");
 
+    }
+
+    public static void sumNum(String str)
+    {
+       int sum = 0;
+      int len = str.length();
+
+      int val = Integer.valueOf(str);
+
+      while(val > 0)
+      {
+         int last = val%10;
+         sum += last;
+         val /= 10;
+      }
+      
+      System.out.println("Val "+sum);
     }
 
     public static int[] rotateArr(int[] arr, int d) {
