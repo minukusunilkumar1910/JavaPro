@@ -733,22 +733,42 @@ public class Main{
 //       return isPrime;
 //      }
 //    }
-import java.util.ArrayList;
+import java.util.*;
 
 class Main {
 
     public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3};
+        int[] arr = {1, 1,2,2, 3};
         int key = 5;
 
         //  int[] res = rotateArr(arr, d);
         //  System.out.println(Arrays.toString(res));
         int[] res = occurance(arr, key);
 
-        permutation(arr);
+      //   permutation(arr);
 //  System.out.println(Arrays.toString(res));
+      //  duplicates(arr);
+ 
+     sumNum("123");
 
+    }
+
+    public static void sumNum(String str)
+    {
+       int sum = 0;
+      int len = str.length();
+
+      int val = Integer.valueOf(str);
+
+      while(val > 0)
+      {
+         int last = val%10;
+         sum += last;
+         val /= 10;
+      }
+      
+      System.out.println("Val "+sum);
     }
 
     public static int[] rotateArr(int[] arr, int d) {
@@ -799,6 +819,24 @@ class Main {
             }
         }
 
+    }
+    public static void duplicates(int[] arr)
+    {
+      int n = arr.length;
+      int idx = 0;
+      for(int i = 0;i<n;i++)
+      {
+         for(int j=i+1;j<n;j++)
+         {
+            if(arr[i] == arr[j])
+            {
+               arr[idx++] = arr[j];
+            }
+         }
+      }
+
+       Arrays.copyOf(arr, idx);
+      System.out.print(Arrays.toString(arr));
     }
 
 }
