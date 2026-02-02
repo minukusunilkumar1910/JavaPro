@@ -750,7 +750,8 @@ class Main {
 //  System.out.println(Arrays.toString(res));
       //  duplicates(arr);
  
-     sumNum("123");
+   
+             
 
     }
 
@@ -769,6 +770,7 @@ class Main {
       }
       
       System.out.println("Val "+sum);
+
     }
 
     public static int[] rotateArr(int[] arr, int d) {
@@ -820,6 +822,8 @@ class Main {
         }
 
     }
+
+    
     public static void duplicates(int[] arr)
     {
       int n = arr.length;
