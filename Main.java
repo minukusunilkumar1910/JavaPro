@@ -739,37 +739,70 @@ class Main {
 
     public static void main(String[] args) {
 
-        int[] arr = {1, 1,2,2, 3};
+        int[] arr = {1, 1, 2, 2, 3};
         int key = 5;
 
         //  int[] res = rotateArr(arr, d);
         //  System.out.println(Arrays.toString(res));
         int[] res = occurance(arr, key);
 
-      //   permutation(arr);
+        //   permutation(arr);
 //  System.out.println(Arrays.toString(res));
-      //  duplicates(arr);
- 
-   
-             
+        //  duplicates(arr);
+        int r = sum(5);
+        //  System.out.println(r);
+
+
+        int[] nums = {0,1,2,2,2,2,0,1,1,1,0,1,1};
+        Sort(nums);
 
     }
-
-    public static void sumNum(String str)
-    {
-       int sum = 0;
-      int len = str.length();
-
-      int val = Integer.valueOf(str);
-
-      while(val > 0)
+   public static void Sort(int[] arr)
+   {
+      int n=arr.length;
+      int t = 0;
+      int i =0; 
+      int j=0;
+      int e = n-1;
+      while(i<=e)
       {
-         int last = val%10;
-         sum += last;
-         val /= 10;
-      }
+         if(arr[i] == 0)
+         {  
+            t = arr[j];
+            arr[j] = arr[i];
+            arr[i] = t;
+            i++;
+            j++;
+         }
+         else if(arr[i] == 2)
+         {
+            t = arr[e];
+            arr[e] = arr[i];
+            arr[i] = t;
+            e--;
+         }
+         else
+         {
+            i++;
+         }
       
-      System.out.println("Val "+sum);
+      }
+
+      System.out.println(Arrays.toString(arr));
+   }
+    public static void sumNum(String str) {
+        int sum = 0;
+        int len = str.length();
+
+        int val = Integer.valueOf(str);
+
+        while (val > 0) {
+            int last = val % 10;
+            sum += last;
+            val /= 10;
+        }
+
+        System.out.println("Val " + sum);
 
     }
 
@@ -823,24 +856,28 @@ class Main {
 
     }
 
-    
-    public static void duplicates(int[] arr)
-    {
-      int n = arr.length;
-      int idx = 0;
-      for(int i = 0;i<n;i++)
-      {
-         for(int j=i+1;j<n;j++)
-         {
-            if(arr[i] == arr[j])
-            {
-               arr[idx++] = arr[j];
+    public static void duplicates(int[] arr) {
+        int n = arr.length;
+        int idx = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    arr[idx++] = arr[j];
+                }
             }
-         }
-      }
+        }
 
-       Arrays.copyOf(arr, idx);
-      System.out.print(Arrays.toString(arr));
+        Arrays.copyOf(arr, idx);
+        System.out.print(Arrays.toString(arr));
+    }
+
+    public static int sum(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        int ans = 0;
+        ans = n + sum(n - 1);
+        return ans;
     }
 
 }
