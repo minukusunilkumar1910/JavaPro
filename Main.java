@@ -753,8 +753,56 @@ class Main {
         //  System.out.println(r);
 
 
-        int[] nums = {0,1,2,2,2,2,0,1,1,1,0,1,1};
-        Sort(nums);
+      //   int[] nums = {0,1,2,2,2,2,0,1,1,1,0,1,1};
+      //   Sort(nums);
+     
+      int[] numss = {5,1,24,15,12,41,1};
+      int t = 5;
+
+      ArrayList<Integer> val = subsum(numss, t);
+      System.out.println(val);
+
+    }
+
+    public static ArrayList<Integer>  subsum(int[] arr,int tar)
+    {
+      ArrayList<Integer> List = new ArrayList<>();
+      int n = arr.length;
+      int i = 0;
+      int j=1;
+      int sum=arr[0];
+      
+      if(sum == tar)
+      {
+         List.add(i+1);
+         List.add(j);
+         return List;
+      }
+
+
+      while(j<n)
+      {
+         sum += arr[j];
+
+         while(sum > tar)
+         {
+            sum -= arr[i];
+            i++;
+         }
+           if(sum == tar)
+         {
+            // System.out.println((i+1)+" "+(j+1));
+            List.add(i+1);
+            List.add(j+1);
+            return List;
+           
+         }
+         j++;
+      }
+   //   System.out.println(sum);
+
+      List.add(-1);
+   return List;
 
     }
    public static void Sort(int[] arr)
