@@ -798,6 +798,21 @@ class Main {
       return maxlen;
    }
 
+   public static void sumn(String str) {
+      int sum = 0;
+      int len = str.length();
+
+      int val = Integer.valueOf(str);
+
+      while (val > 0) {
+         int last = val % 10;
+         sum += last;
+         val /= 10;
+      }
+
+      System.out.println("Val " + sum);
+
+   }
    public static ArrayList<Integer> subsum(int[] arr, int tar) {
       ArrayList<Integer> List = new ArrayList<>();
       int n = arr.length;
