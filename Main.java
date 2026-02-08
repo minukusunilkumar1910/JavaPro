@@ -761,12 +761,38 @@ class Main {
       // ArrayList<Integer> val = subsum(numss, t);
       // System.out.println(val);
       
-      int[] arr = {1,0,0,0,1};
-      int k = 2;
-      int r = maxOnes(arr, k);
+      // int[] arr = {1,0,0,0,1};
+      // int k = 2;
+      // int r = maxOnes(arr, k);
+      // System.out.println(r);
+
+      
+      boolean r = isPower(1);
       System.out.println(r);
+      
+   }
+ public static boolean isPower(int m)
+{
+    for(int i = 0; i <= m; i++)
+    {
+        int r = pow2(i);
+        if(r == m)
+            return true;
+        if(r > m)
+            return false;
+    }
+    return false;
+}
+   public static int pow2(int n)
+   {
+       if(n==0)
+       {
+         return 1;
+       }
 
 
+       int r =2* pow2(n-1);
+       return r;
    }
    public static int maxOnes(int[] arr,int k)
    {
@@ -796,22 +822,9 @@ class Main {
       }
       return maxlen;
    }
+    
 
-   // public static void sumn(String str) {
-   //    int sum = 0;
-   //    int len = str.length();
-
-   //    int val = Integer.valueOf(str);
-
-   //    while (val > 0) {
-   //       int last = val % 10;
-   //       sum += last;
-   //       val /= 10;
-   //    }
-
-   //    System.out.println("Val " + sum);
-
-   }
+   
    public static ArrayList<Integer> subsum(int[] arr, int tar) {
       ArrayList<Integer> List = new ArrayList<>();
       int n = arr.length;
