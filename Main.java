@@ -773,15 +773,18 @@ class Main {
    }
  public static boolean isPower(int m)
 {
-    for(int i = 0; i <= m; i++)
-    {
-        int r = pow2(i);
-        if(r == m)
-            return true;
-        if(r > m)
-            return false;
-    }
-    return false;
+   //  for(int i = 0; i <= m; i++)
+   //  {
+   //      int r = pow2(i);
+   //      if(r == m)
+   //          return true;
+   //      if(r > m)
+   //          return false;
+   //  }
+   //  return false;
+
+   return m >0 && (m & (m-1)) == 0;
+   
 }
    public static int pow2(int n)
    {
