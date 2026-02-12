@@ -733,283 +733,416 @@ public class Main{
 //       return isPrime;
 //      }
 //    }
-import java.util.*;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// import java.util.*;
+
+// class Main {
+
+//    public static void main(String[] args) {
+
+//       // int[] arr = { 1, 1, 2, 2, 3 };
+//       // int key = 5;
+
+//       // int[] res = rotateArr(arr, d);
+//       // System.out.println(Arrays.toString(res));
+//       // int[] res = occurance(arr, key);
+
+//       // permutation(arr);
+//       // System.out.println(Arrays.toString(res));
+//       // duplicates(arr);
+//       // int r = sum(5);
+//       // System.out.println(r);
+
+//       // int[] nums = {0,1,2,2,2,2,0,1,1,1,0,1,1};
+//       // Sort(nums);
+
+//       // int[] numss = {5,1,24,15,12,41,1};
+//       // int t = 5;
+
+//       // ArrayList<Integer> val = subsum(numss, t);
+//       // System.out.println(val);
+
+//       // int[] arr = {1,0,0,0,1};
+//       // int k = 2;
+//       // int r = maxOnes(arr, k);
+//       // System.out.println(r);
+
+//       // boolean r = isPower(1);
+//       // System.out.println(r);
+//       int[] nums = {2,1,2,3};
+//       int r = longestBalanced(nums);
+//       System.out.println(r);
+//    }
+//  public static boolean isPower(int m)
+// {
+//    //  for(int i = 0; i <= m; i++)
+//    //  {
+//    //      int r = pow2(i);
+//    //      if(r == m)
+//    //          return true;
+//    //      if(r > m)
+//    //          return false;
+//    //  }
+//    //  return false;
+
+//    return m >0 && (m & (m-1)) == 0;
+
+// }
+//    public static int pow2(int n)
+//    {
+//        if(n==0)
+//        {
+//          return 1;
+//        }
+
+//        int r =2* pow2(n-1);
+//        return r;
+//    }
+//    public static int maxOnes(int[] arr,int k)
+//    {
+//       int i = 0;
+//       int j = 0;
+//       int maxlen = 0;
+//       int zeros = 0;
+//       int n = arr.length;
+
+//       while(j < n)
+//       {
+//          if(arr[j] == 0)
+//          {
+//             zeros++;
+//          }
+//          while(zeros > k)
+//          {
+//             if(arr[i] == 0)
+//               {
+//                zeros--;
+//               }
+//               i++;
+//          }
+//          maxlen = Math.max(maxlen ,j-i+1);
+
+//          j++;
+//       }
+//       return maxlen;
+//    }
+
+//    public static ArrayList<Integer> subsum(int[] arr, int tar) {
+//       ArrayList<Integer> List = new ArrayList<>();
+//       int n = arr.length;
+//       int i = 0;
+//       int j = 1;
+//       int sum = arr[0];
+
+//       if (sum == tar) {
+//          List.add(i + 1);
+//          List.add(j);
+//          return List;
+//       }
+
+//       while (j < n) {
+//          sum += arr[j];
+
+//          while (sum > tar) {
+//             sum -= arr[i];
+//             i++;
+//          }
+//          if (sum == tar) {
+//             // System.out.println((i+1)+" "+(j+1));
+//             List.add(i + 1);
+//             List.add(j + 1);
+//             return List;
+
+//          }
+//          j++;
+//       }
+//       // System.out.println(sum);
+
+//       List.add(-1);
+//       return List;
+
+//    }
+
+//    public static void Sort(int[] arr) {
+//       int n = arr.length;
+//       int t = 0;
+//       int i = 0;
+//       int j = 0;
+//       int e = n - 1;
+//       while (i <= e) {
+//          if (arr[i] == 0) {
+//             t = arr[j];
+//             arr[j] = arr[i];
+//             arr[i] = t;
+//             i++;
+//             j++;
+//          } else if (arr[i] == 2) {
+//             t = arr[e];
+//             arr[e] = arr[i];
+//             arr[i] = t;
+//             e--;
+//          } else {
+//             i++;
+//          }
+
+//       }
+
+//       System.out.println(Arrays.toString(arr));
+//    }
+
+//    public static void sumNum(String str) {
+//       int sum = 0;
+//       int len = str.length();
+
+//       int val = Integer.valueOf(str);
+
+//       while (val > 0) {
+//          int last = val % 10;
+//          sum += last;
+//          val /= 10;
+//       }
+
+//       System.out.println("Val " + sum);
+
+//    }
+
+//    public static int[] rotateArr(int[] arr, int d) {
+
+//       int n = arr.length;
+//       if (d == 0 || d > n) {
+//          return arr;
+//       }
+
+//       while (d > 0) {
+//          int extra = arr[0];
+//          for (int j = 1; j < n; j++) {
+//             arr[j - 1] = arr[j];
+//          }
+//          arr[n - 1] = extra;
+//          d--;
+//       }
+
+//       return arr;
+//    }
+
+//    public static int[] occurance(int[] arr, int key) {
+//       int n = arr.length;
+//       int[] nums = new int[n];
+
+//       int i = 1;
+//       while (i < n) {
+//          if (key == arr[i - 1]) {
+//             nums[i] = arr[i - 1];
+//             arr[i - 1] = arr[i];
+//          }
+
+//          i++;
+//       }
+//       return nums;
+//    }
+
+//    public static void permutation(int[] arr) {
+//       int n = arr.length;
+//       for (int i = 0; i < n; i++) {
+//          for (int j = i; j < n; j++) {
+//             ArrayList<Integer> list = new ArrayList<>();
+//             for (int k = i; k <= j; k++) {
+//                list.add(arr[k]);
+//             }
+//             System.out.print(list + " ");
+
+//          }
+//       }
+
+//    }
+
+//    public static void duplicates(int[] arr) {
+//       int n = arr.length;
+//       int idx = 0;
+//       for (int i = 0; i < n; i++) {
+//          for (int j = i + 1; j < n; j++) {
+//             if (arr[i] == arr[j]) {
+//                arr[idx++] = arr[j];
+//             }
+//          }
+//       }
+
+//       Arrays.copyOf(arr, idx);
+//       System.out.print(Arrays.toString(arr));
+//    }
+
+//    public static int sum(int n) {
+//       if (n == 0) {
+//          return 0;
+//       }
+//       int ans = 0;
+//       ans = n + sum(n - 1);
+//       return ans;
+//    }
+
+//     public static int longestBalanced(int[] nums) 
+//     {
+//         int n  = nums.length;
+//         int ans = 0;
+
+//         for(int i = 0;i<n;i++)
+//         {
+//             Set<Integer> even = new HashSet<>();
+//             Set<Integer> odd = new HashSet<>();
+//             for(int j = i;j<n;j++)
+//             {
+//                 if(nums[j] % 2 == 0)
+//                 {
+//                     even.add(nums[j]);
+
+//                 }
+//                 else
+//                 {
+//                     odd.add(nums[j]);
+//                 }
+//                 if(even.size() == odd.size())
+//                 {
+//                     ans = Math.max(ans, j-i+1);
+//                 }
+//             }
+//         }
+
+//         return ans;
+//     }
+// }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+/// 
+/// 
+///  Placement Prep 
 
 class Main {
-
    public static void main(String[] args) {
-
-      // int[] arr = { 1, 1, 2, 2, 3 };
-      // int key = 5;
-
-      // int[] res = rotateArr(arr, d);
-      // System.out.println(Arrays.toString(res));
-      // int[] res = occurance(arr, key);
-
-      // permutation(arr);
-      // System.out.println(Arrays.toString(res));
-      // duplicates(arr);
-      // int r = sum(5);
+      // CountAllDigits(1234567890,0);
+      // int r = count(123, 0);
       // System.out.println(r);
-
-      // int[] nums = {0,1,2,2,2,2,0,1,1,1,0,1,1};
-      // Sort(nums);
-
-      // int[] numss = {5,1,24,15,12,41,1};
-      // int t = 5;
-
-      // ArrayList<Integer> val = subsum(numss, t);
-      // System.out.println(val);
+      // Reverse(123, 0);
+      // int r = reverse(1234, 0);
+      // Palindrome(10, false);
+      // ArmStrong(11);
+      // boolean r = armstrong(123);
+      // ArrayList<Integer> r = divisors(36);
+      // for(int i = 1;i<=53;i++)
+      // {
+      //    if(Prime(i) == true)
+      //    System.out.print(i+" ");
+      // }
+      // boolean r = Prime(2);
+      // System.out.println(r);
       
-      // int[] arr = {1,0,0,0,1};
-      // int k = 2;
-      // int r = maxOnes(arr, k);
-      // System.out.println(r);
-
-      
-      // boolean r = isPower(1);
-      // System.out.println(r);
-      int[] nums = {2,1,2,3};
-      int r = longestBalanced(nums);
-      System.out.println(r);
    }
- public static boolean isPower(int m)
-{
-   //  for(int i = 0; i <= m; i++)
-   //  {
-   //      int r = pow2(i);
-   //      if(r == m)
-   //          return true;
-   //      if(r > m)
-   //          return false;
-   //  }
-   //  return false;
 
-   return m >0 && (m & (m-1)) == 0;
-   
-}
-   public static int pow2(int n)
-   {
-       if(n==0)
-       {
-         return 1;
-       }
-
-
-       int r =2* pow2(n-1);
-       return r;
-   }
-   public static int maxOnes(int[] arr,int k)
-   {
-      int i = 0;
-      int j = 0;
-      int maxlen = 0;
-      int zeros = 0;
-      int n = arr.length;
-
-      while(j < n)
-      {
-         if(arr[j] == 0)
-         {
-            zeros++;
-         }
-         while(zeros > k)
-         {
-            if(arr[i] == 0)
-              {
-               zeros--;
-              }
-              i++;
-         }
-         maxlen = Math.max(maxlen ,j-i+1);
-     
-         j++;
+   static void CountAllDigits(int n, int c) {
+      if (n == 0) {
+         System.err.println(c);
+         return;
       }
-      return maxlen;
+      c++;
+
+      CountAllDigits(n / 10, c);
    }
-    
 
-   
-   public static ArrayList<Integer> subsum(int[] arr, int tar) {
-      ArrayList<Integer> List = new ArrayList<>();
-      int n = arr.length;
-      int i = 0;
-      int j = 1;
-      int sum = arr[0];
+   static int count(int n, int c) {
+      if (n == 0) {
+         return c;
+      }
+      c++;
+      return count(n / 10, c);
+   }
 
-      if (sum == tar) {
-         List.add(i + 1);
-         List.add(j);
-         return List;
+   static void Reverse(int n, int r) {
+      if (n == 0) {
+         System.out.println(r);
+         return;
       }
 
-      while (j < n) {
-         sum += arr[j];
+      int last = n % 10;
 
-         while (sum > tar) {
-            sum -= arr[i];
-            i++;
-         }
-         if (sum == tar) {
-            // System.out.println((i+1)+" "+(j+1));
-            List.add(i + 1);
-            List.add(j + 1);
-            return List;
+      Reverse(n / 10, (r * 10) + last);
+   }
 
-         }
-         j++;
+   static int reverse(int n, int c) {
+      if (n == 0) {
+         return c;
+      }
+      int last = n % 10;
+      return reverse(n / 10, (c * 10) + last);
+   }
+
+   static void Palindrome(int n, boolean ans) {
+      if (n == reverse(n, 0)) {
+         System.out.println("True " + n + " is a Palindrome");
+      } else {
+         System.out.println("False " + n + " is not a Palindrome");
+      }
+   }
+
+   static int ArmStrong(int n) {
+
+      int sum = 0;
+      while (n > 0) {
+         int last = n % 10;
+         int q = (int) Math.pow(last, 3);
+         sum = sum + q;
+         n = n / 10;
       }
       // System.out.println(sum);
-
-      List.add(-1);
-      return List;
+      return sum;
 
    }
 
-   public static void Sort(int[] arr) {
-      int n = arr.length;
-      int t = 0;
-      int i = 0;
-      int j = 0;
-      int e = n - 1;
-      while (i <= e) {
-         if (arr[i] == 0) {
-            t = arr[j];
-            arr[j] = arr[i];
-            arr[i] = t;
-            i++;
-            j++;
-         } else if (arr[i] == 2) {
-            t = arr[e];
-            arr[e] = arr[i];
-            arr[i] = t;
-            e--;
-         } else {
-            i++;
-         }
-
+   static boolean armstrong(int n) {
+      if (n == ArmStrong(n)) {
+         return true;
       }
-
-      System.out.println(Arrays.toString(arr));
+      return false;
    }
 
-   public static void sumNum(String str) {
-      int sum = 0;
-      int len = str.length();
+   static ArrayList<Integer> divisors(int n) {
+      ArrayList<Integer> list = new ArrayList<>();
 
-      int val = Integer.valueOf(str);
-
-      while (val > 0) {
-         int last = val % 10;
-         sum += last;
-         val /= 10;
-      }
-
-      System.out.println("Val " + sum);
-
-   }
-
-   public static int[] rotateArr(int[] arr, int d) {
-
-      int n = arr.length;
-      if (d == 0 || d > n) {
-         return arr;
-      }
-
-      while (d > 0) {
-         int extra = arr[0];
-         for (int j = 1; j < n; j++) {
-            arr[j - 1] = arr[j];
-         }
-         arr[n - 1] = extra;
-         d--;
-      }
-
-      return arr;
-   }
-
-   public static int[] occurance(int[] arr, int key) {
-      int n = arr.length;
-      int[] nums = new int[n];
-
-      int i = 1;
-      while (i < n) {
-         if (key == arr[i - 1]) {
-            nums[i] = arr[i - 1];
-            arr[i - 1] = arr[i];
-         }
-
-         i++;
-      }
-      return nums;
-   }
-
-   public static void permutation(int[] arr) {
-      int n = arr.length;
-      for (int i = 0; i < n; i++) {
-         for (int j = i; j < n; j++) {
-            ArrayList<Integer> list = new ArrayList<>();
-            for (int k = i; k <= j; k++) {
-               list.add(arr[k]);
-            }
-            System.out.print(list + " ");
-
-         }
-      }
-
-   }
-
-   public static void duplicates(int[] arr) {
-      int n = arr.length;
-      int idx = 0;
-      for (int i = 0; i < n; i++) {
-         for (int j = i + 1; j < n; j++) {
-            if (arr[i] == arr[j]) {
-               arr[idx++] = arr[j];
-            }
-         }
-      }
-
-      Arrays.copyOf(arr, idx);
-      System.out.print(Arrays.toString(arr));
-   }
-
-   public static int sum(int n) {
-      if (n == 0) {
-         return 0;
-      }
-      int ans = 0;
-      ans = n + sum(n - 1);
-      return ans;
-   }
-   
-    public static int longestBalanced(int[] nums) 
-    {
-        int n  = nums.length;
-        int ans = 0;
-
-        for(int i = 0;i<n;i++)
-        {
-            Set<Integer> even = new HashSet<>();
-            Set<Integer> odd = new HashSet<>();
-            for(int j = i;j<n;j++)
+      for (int i = 0; i <= n; i++) {
+         try 
+         {
+            if (n % i == 0) 
             {
-                if(nums[j] % 2 == 0)
-                {
-                    even.add(nums[j]);
-
-                }
-                else
-                {
-                    odd.add(nums[j]);
-                }
-                if(even.size() == odd.size())
-                {
-                    ans = Math.max(ans, j-i+1);
-                }
+               list.add(i);
             }
-        }
 
-        return ans;
-    }
+         }
+          catch (Exception e) 
+         {
+            System.out.println(e);
+         }
+
+      }
+
+      return list;
+   }
+
+   static boolean Prime(int n)
+   {
+       boolean isPrime = true;
+      if( n < 2 )
+      {
+        return false;
+      }
+
+      for(int i = 2;i*i <= n;i++)
+      {
+         if(n % i == 0)
+         {
+            isPrime = false;
+            break;
+         }
+      }
+     return isPrime;
+       
+   }
+
+   
 }
