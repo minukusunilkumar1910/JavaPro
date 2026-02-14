@@ -1,29 +1,11 @@
 
-import java.util.ArrayList;
+import java.util.*;
 
 //       System.out.println("Hello");
 //    }
 // }
 
-/*
-import java.util.Scanner;
-
-
-
-
-public class Main
-{
-public static void main(String[] args)
-{
- String a,b;
- a="sunil ";
- b="kumar";
- System.out.println(a+b);
-}
-} 
-
-
-
+/* 
 
 public class Main{
    public static void main(String[] args) 
@@ -358,6 +340,8 @@ public class Main
  }
 
 }
+
+
 import java.util.Scanner;
 
 public class Main
