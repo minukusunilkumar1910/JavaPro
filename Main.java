@@ -1031,12 +1031,25 @@ class Main {
       // ArrayList<Integer> r = divisors(36);
       // for(int i = 1;i<=53;i++)
       // {
-      //    if(Prime(i) == true)
-      //    System.out.print(i+" ");
+      // if(Prime(i) == true)
+      // System.out.print(i+" ");
       // }
       // boolean r = Prime(2);
-      // System.out.println(r);
-      
+
+      // int[] arr = {1, 5, 3, 4, 6};
+      // largest(arr);
+      // int r = seclargest(arr);
+      // boolean r = Sorted(arr);
+
+      // int r = numberOfSteps(14);
+      // ArrayList r = Triangle(arr);
+
+      int[] arr = { 11, 1, 1, 1, 1, 1 };
+      // int tar = 13;
+      // int r = bis(arr, tar, 0, arr.length-1);
+      // boolean r = sort(arr,1);
+      ArrayList<Integer> r = lis(arr,0, 1,new ArrayList<>());
+      System.out.println(r);
    }
 
    static void CountAllDigits(int n, int c) {
@@ -1109,16 +1122,12 @@ class Main {
       ArrayList<Integer> list = new ArrayList<>();
 
       for (int i = 0; i <= n; i++) {
-         try 
-         {
-            if (n % i == 0) 
-            {
+         try {
+            if (n % i == 0) {
                list.add(i);
             }
 
-         }
-          catch (Exception e) 
-         {
+         } catch (Exception e) {
             System.out.println(e);
          }
 
@@ -1127,25 +1136,220 @@ class Main {
       return list;
    }
 
-   static boolean Prime(int n)
-   {
-       boolean isPrime = true;
-      if( n < 2 )
-      {
-        return false;
+   static boolean Prime(int n) {
+      boolean isPrime = true;
+      if (n < 2) {
+         return false;
       }
 
-      for(int i = 2;i*i <= n;i++)
-      {
-         if(n % i == 0)
-         {
+      for (int i = 2; i * i <= n; i++) {
+         if (n % i == 0) {
             isPrime = false;
             break;
          }
       }
-     return isPrime;
-       
+      return isPrime;
+
    }
 
-   
+   static int largest(int[] arr) {
+
+      // int lar = Integer.MIN_VALUE;
+      int lar = arr[0];
+
+      for (int i = 0; i < arr.length; i++) {
+         if (arr[i] > lar) {
+            lar = arr[i];
+         }
+      }
+      // System.out.println(lar);
+      return lar;
+   }
+
+   static int seclargest(int[] arr) {
+      int lar = arr[0];
+      int seclar = arr[0];
+      for (int i = 0; i < arr.length; i++) {
+         if (arr[i] > lar) {
+            seclar = lar;
+            lar = arr[i];
+         } else if (arr[i] < lar && seclar < arr[i]) {
+            seclar = arr[i];
+         }
+
+      }
+      return seclar;
+   }
+
+   static boolean Sorted(int[] arr) {
+      int i = 0;
+      int n = arr.length - 1;
+      int j = n;
+
+      while (i <= j) {
+         if (arr[i] <= arr[j]) {
+            i++;
+            j--;
+         } else {
+            return false;
+         }
+      }
+      return true;
+   }
+
+   public static int numberOfSteps(int n) {
+      if (n == 0) {
+         return 0;
+      }
+
+      if (n % 2 == 0) {
+         return 1 + numberOfSteps(n / 2);
+      } else {
+
+         return 1 + numberOfSteps(n - 1);
+      }
+   }
+
+   public static ArrayList<Integer> Triangle(int[] arr) {
+      int n = arr.length;
+      ArrayList<Integer> list = new ArrayList<>();
+      if (n == 1) {
+         list.add(arr[0]);
+         return list;
+      }
+      int[] res = new int[n - 1];
+
+      for (int i = 0; i < n - 1; i++) {
+         res[i] = arr[i] + arr[i + 1];
+      }
+      // System.out.println(list);
+      return Triangle(res);
+
+   }
+
+   public static int biSearch(int[] arr, int tar) {
+      int n = arr.length;
+      int low = 0;
+      int high = n - 1;
+      while (low <= high) {
+         int mid = (low + high) / 2;
+         if (arr[mid] == tar) {
+            return mid + 1;
+         }
+
+         if (arr[mid] < tar) {
+            low = mid;
+         } else {
+            high = mid;
+         }
+
+      }
+      return -1;
+   }
+
+   public static int bis(int[] arr, int t, int low, int high) {
+      
+      
+      if(low > high)
+      {
+         return -1;
+      }
+      
+      int mid = (low + high) / 2;
+      if (arr[mid] == t) {
+         System.out.println(arr[mid]);
+         return mid+1;
+      }
+      
+
+      if (arr[mid] < t) 
+      {
+         return bis(arr, t, mid+1, high);
+      }
+      else
+      {
+         return bis(arr, t, low, mid-1);
+      }
+       
+       
+
+   }
+
+   public static boolean sorted(int[] arr)
+   {
+      
+      for(int i = 1;i<arr.length;i++)
+      {
+         if(arr[i-1] > arr[i])
+         {
+            return false;
+         }
+      }
+
+      return true;
+     
+
+   }
+
+   public static boolean sort(int[] arr,int i)
+   {
+      if(i >= arr.length-1)
+      {
+         return true;
+      }
+
+      if(arr[i-1] <= arr[i])
+      {
+         return sort(arr, i+1);
+      }
+      else
+      {
+         return false;
+      }
+   }
+
+   public static int liSec(int[] arr,int t)
+   {
+      int n= arr.length;
+      for(int i = 0;i<n;i++)
+      {
+         if(arr[i] == t)
+         {
+            return i+1;
+         }
+      }
+
+      return -1;
+   }
+
+   public static int lis(int[] arr , int i,int t)
+   {
+      if(i == arr.length)
+      {
+         return -1;
+      }
+
+      if(arr[i] == t)
+      {
+         return i+1;
+      }
+
+     return lis(arr, i+1,t);
+   }
+
+   public static ArrayList<Integer> lis(int[] arr , int i,int t, ArrayList<Integer> list)
+   {
+      if(i == arr.length)
+      {
+         // list.add(-1);
+         return list;
+      }
+
+      if(arr[i] == t)
+      {
+         list.add(i+1);
+      }
+
+     return lis(arr, i+1,t,list);
+   }
 }
