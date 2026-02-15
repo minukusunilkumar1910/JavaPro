@@ -1028,12 +1028,15 @@ class Main {
       // int r = numberOfSteps(14);
       // ArrayList r = Triangle(arr);
 
-      int[] arr = { 11, 1, 1, 1, 1, 1 };
+      // int[] arr = { 11, 1, 1, 1, 1, 1 };
       // int tar = 13;
       // int r = bis(arr, tar, 0, arr.length-1);
       // boolean r = sort(arr,1);
-      ArrayList<Integer> r = lis(arr,0, 1,new ArrayList<>());
-      System.out.println(r);
+      // ArrayList<Integer> r = lis(arr,0, 1,new ArrayList<>());
+      
+      // String r = BinSum(10, 13);
+      // String r = addBinary(11,1);
+      // System.out.println(r);
    }
 
    static void CountAllDigits(int n, int c) {
@@ -1335,5 +1338,33 @@ class Main {
       }
 
      return lis(arr, i+1,t,list);
+   }
+
+   public static String BinSum(int a ,int b )
+   {
+      int sum = a+b;
+
+       String ans = Integer.toBinaryString(sum);
+
+       return ans;
+   }
+
+   public static String addBinary(String a , String b)
+   {
+      StringBuilder res = new StringBuilder();
+      int i = a.length()-1;
+      int j = b.length()-1;
+      int carry = 0;
+      while(i >=0 || j>= 0||carry == 1)
+      {
+         int sum = carry;
+         if(i>=0)
+         {
+            
+         }
+      }
+
+      return res.reverse().toString();
+
    }
 }
