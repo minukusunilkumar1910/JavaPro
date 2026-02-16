@@ -1033,10 +1033,14 @@ class Main {
       // int r = bis(arr, tar, 0, arr.length-1);
       // boolean r = sort(arr,1);
       // ArrayList<Integer> r = lis(arr,0, 1,new ArrayList<>());
-      
+
       // String r = BinSum(10, 13);
       // String r = addBinary(11,1);
-      // System.out.println(r);
+
+      // int r = ReverseBits(43261596);
+
+      boolean r = ispower3(27);
+      System.out.println(r);
    }
 
    static void CountAllDigits(int n, int c) {
@@ -1235,136 +1239,143 @@ class Main {
    }
 
    public static int bis(int[] arr, int t, int low, int high) {
-      
-      
-      if(low > high)
-      {
+
+      if (low > high) {
          return -1;
       }
-      
+
       int mid = (low + high) / 2;
       if (arr[mid] == t) {
          System.out.println(arr[mid]);
-         return mid+1;
+         return mid + 1;
       }
-      
 
-      if (arr[mid] < t) 
-      {
-         return bis(arr, t, mid+1, high);
+      if (arr[mid] < t) {
+         return bis(arr, t, mid + 1, high);
+      } else {
+         return bis(arr, t, low, mid - 1);
       }
-      else
-      {
-         return bis(arr, t, low, mid-1);
-      }
-       
-       
 
    }
 
-   public static boolean sorted(int[] arr)
-   {
-      
-      for(int i = 1;i<arr.length;i++)
-      {
-         if(arr[i-1] > arr[i])
-         {
+   public static boolean sorted(int[] arr) {
+
+      for (int i = 1; i < arr.length; i++) {
+         if (arr[i - 1] > arr[i]) {
             return false;
          }
       }
 
       return true;
-     
 
    }
 
-   public static boolean sort(int[] arr,int i)
-   {
-      if(i >= arr.length-1)
-      {
+   public static boolean sort(int[] arr, int i) {
+      if (i >= arr.length - 1) {
          return true;
       }
 
-      if(arr[i-1] <= arr[i])
-      {
-         return sort(arr, i+1);
-      }
-      else
-      {
+      if (arr[i - 1] <= arr[i]) {
+         return sort(arr, i + 1);
+      } else {
          return false;
       }
    }
 
-   public static int liSec(int[] arr,int t)
-   {
-      int n= arr.length;
-      for(int i = 0;i<n;i++)
-      {
-         if(arr[i] == t)
-         {
-            return i+1;
+   public static int liSec(int[] arr, int t) {
+      int n = arr.length;
+      for (int i = 0; i < n; i++) {
+         if (arr[i] == t) {
+            return i + 1;
          }
       }
 
       return -1;
    }
 
-   public static int lis(int[] arr , int i,int t)
-   {
-      if(i == arr.length)
-      {
+   public static int lis(int[] arr, int i, int t) {
+      if (i == arr.length) {
          return -1;
       }
 
-      if(arr[i] == t)
-      {
-         return i+1;
+      if (arr[i] == t) {
+         return i + 1;
       }
 
-     return lis(arr, i+1,t);
+      return lis(arr, i + 1, t);
    }
 
-   public static ArrayList<Integer> lis(int[] arr , int i,int t, ArrayList<Integer> list)
-   {
-      if(i == arr.length)
-      {
+   public static ArrayList<Integer> lis(int[] arr, int i, int t, ArrayList<Integer> list) {
+      if (i == arr.length) {
          // list.add(-1);
          return list;
       }
 
-      if(arr[i] == t)
-      {
-         list.add(i+1);
+      if (arr[i] == t) {
+         list.add(i + 1);
       }
 
-     return lis(arr, i+1,t,list);
+      return lis(arr, i + 1, t, list);
    }
 
-   public static String BinSum(int a ,int b )
-   {
-      int sum = a+b;
+   public static String BinSum(int a, int b) {
+      int sum = a + b;
 
-       String ans = Integer.toBinaryString(sum);
+      String ans = Integer.toBinaryString(sum);
 
-       return ans;
+      return ans;
    }
 
-   public static String addBinary(String a , String b)
-   {
+   public static String addBinary(String a, String b) {
       StringBuilder res = new StringBuilder();
-      int i = a.length()-1;
-      int j = b.length()-1;
+      int i = a.length() - 1;
+      int j = b.length() - 1;
       int carry = 0;
-      while(i >=0 || j>= 0||carry == 1)
-      {
+      while (i >= 0 || j >= 0 || carry == 1) {
          int sum = carry;
-         if(i>=0)
-         {
-            
+         if (i >= 0) {
+
          }
       }
 
       return res.reverse().toString();
 
    }
+
+   public static int ReverseBits(int n) {
+
+      int res = 0;
+
+      for (int i = 0; i < 32; i++) {
+         res <<= 1;
+         res |= (n & 1);
+         n >>= 1;
+      }
+
+      return res;
+   }
+
+   public static boolean ispower3(int n) {
+      if (n == 1)
+         return true;
+
+      if (n <= 0 || n % 3 != 0)
+         return false;
+
+      return ispower3(n / 3);
+
+   }
+
+   public static boolean ispower4(int n) {
+      if (n == 1)
+         return true;
+
+      if (n <= 0 || n % 4 != 0)
+         return false;
+
+      return ispower4(n / 4);
+   }
+
+   
+
 }

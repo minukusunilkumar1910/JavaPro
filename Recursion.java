@@ -32,18 +32,21 @@ public class Recursion {
       // boolean r = sort(arr,1);
       // ArrayList<Integer> r = lis(arr,0, 1,new ArrayList<>());
       // int r = Rbs(arr, 6, 0, arr.length-1);
-      // System.out.println(r);
-      
+
       // Pattern1(4,0);
       // Pattern2(1,1,4);
       // Pattern3(1,1,4);
-      
-      // Pattern4(4, 1,4);
-      
-      int[] arr = {11,1,2,3,4,6};
-      bubbleSort(arr);
 
-      
+      // Pattern4(4, 1,4);
+
+      // int[] arr = {11,1,2,3,4,6};
+      // // bubbleSort(arr);
+      // bs(arr, 0, arr.length-1);
+
+      // StringBuilder r = skipa("bbbbbbaaaaaa");
+      // String r = skipA("baabbaccab",new StringBuilder(),0);
+      String r = skipWord("sunilApplesunncc", "Apple",new StringBuilder(),0);
+      System.out.println(r);
 
    }
 
@@ -374,52 +377,102 @@ public class Recursion {
 
    }
 
-   public static void Pattern4(int r, int c,int n) {
-   if (n == 0)
-            return;
+   public static void Pattern4(int r, int c, int n) {
+      if (n == 0)
+         return;
 
-     
-        if (c <= 4 - r) {
-            System.out.print(" ");
-            Pattern4(r, c + 1,n);
-        }
-        
-        else if (c <= 4) {
-            System.out.print("*");
-            Pattern4(r, c + 1,n);
-        }
-       
-        else {
-            System.out.println();
-            Pattern4(r - 1, 1,n-1);
-        }
-    }
+      if (c <= 4 - r) {
+         System.out.print(" ");
+         Pattern4(r, c + 1, n);
+      }
 
-   public static void bubbleSort(int[] arr)
-   {
+      else if (c <= 4) {
+         System.out.print("*");
+         Pattern4(r, c + 1, n);
+      }
+
+      else {
+         System.out.println();
+         Pattern4(r - 1, 1, n - 1);
+      }
+   }
+  
+   public static void bubbleSort(int[] arr) {
       int n = arr.length;
-      
-         for(int i = 0;i<n-1;i++)
-         {
-            for(int j = 0;j<n-i-1;j++)
-            {
-               if(arr[j] > arr[j+1])
-               {
-                  int temp = arr[j];
-                  arr[j] = arr[j+1];
-                  arr[j+1] = temp;
-               }
+
+      for (int i = 0; i < n - 1; i++) {
+         for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+               int temp = arr[j];
+               arr[j] = arr[j + 1];
+               arr[j + 1] = temp;
             }
          }
+      }
 
-
-          for(int num : arr)
-        {
-            System.out.print(num + " ");
-        }
+      for (int num : arr) {
+         System.out.print(num + " ");
+      }
    }
-
    
+   public static void bs(int[] arr, int i, int n) {
+      if (n == 0) {
+         return;
+      }
+
+      if (i < n) {
+         if (arr[i] > arr[i + 1]) {
+            int t = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = t;
+         }
+         bs(arr, i + 1, n);
+      } else {
+         bs(arr, 0, n - 1);
+      }
+
    }
 
+   public static StringBuilder skipa(String word) {
 
+      StringBuilder ans = new StringBuilder();
+
+      for (int i = 0; i < word.length(); i++) {
+         if (word.charAt(i) != 'a') {
+            ans.append(word.charAt(i));
+         }
+      }
+
+      return ans;
+   }
+
+   public static String skipA(String str, StringBuilder ans, int i) {
+      if (i == str.length()) {
+         String an = ans.toString();
+         return an;
+      }
+
+      if (str.charAt(i) != 'a') {
+         ans.append(str.charAt(i));
+      }
+
+      return skipA(str, ans, i + 1);
+   }
+
+   public static String skipWord(String str, String word, StringBuilder ans, int i)
+    {
+      if (i == str.length()) {
+         String an = ans.toString();
+         return an;
+      }
+
+      if (str.contains(word)) {
+         ans.append("");
+      } else 
+      {
+        ans.append(str.charAt(i));
+      }
+       return skipWord(str, word, ans, i+1);
+   }
+
+}
