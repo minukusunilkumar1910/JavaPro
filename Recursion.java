@@ -45,8 +45,11 @@ public class Recursion {
 
       // StringBuilder r = skipa("bbbbbbaaaaaa");
       // String r = skipA("baabbaccab",new StringBuilder(),0);
-      String r = skipWord("sunilApplesunncc", "Apple",new StringBuilder(),0);
-      System.out.println(r);
+      // String r = skipWord("sunilApplesunncc", "Apple",new StringBuilder(),0);
+      // String r = mergeAlternately("abc", "pqr");
+      // System.out.println(r);
+
+      trail("the sky is blue");
 
    }
 
@@ -396,7 +399,7 @@ public class Recursion {
          Pattern4(r - 1, 1, n - 1);
       }
    }
-  
+
    public static void bubbleSort(int[] arr) {
       int n = arr.length;
 
@@ -414,7 +417,7 @@ public class Recursion {
          System.out.print(num + " ");
       }
    }
-   
+
    public static void bs(int[] arr, int i, int n) {
       if (n == 0) {
          return;
@@ -459,20 +462,104 @@ public class Recursion {
       return skipA(str, ans, i + 1);
    }
 
-   public static String skipWord(String str, String word, StringBuilder ans, int i)
-    {
-      if (i == str.length()) {
+   public static String skipWord(String str, String word, StringBuilder ans, int i) {
+      if (i == str.length() - 1) {
          String an = ans.toString();
          return an;
       }
 
-      if (str.contains(word)) {
-         ans.append("");
-      } else 
-      {
-        ans.append(str.charAt(i));
+      int j = 0;
+      while (str.charAt(i) == word.charAt(j) && j < word.length()) {
+         i++;
+         j++;
       }
-       return skipWord(str, word, ans, i+1);
+      j = 0;
+      if (str.charAt(i) != word.charAt(j)) {
+         ans.append(str.charAt(i));
+      }
+      return skipWord(str, word, ans, i + 1);
+   }
+
+   public static String mergeAlternately(String word1, String word2) {
+
+      // int i = 0;
+      // int j = 0;
+      // int n = word1.length();
+      // int m = word2.length();
+      // StringBuilder ans = new StringBuilder();
+
+      // while (i < n && j < m) {
+      // ans.append(word1.charAt(i));
+      // ans.append(word2.charAt(j));
+      // i++;
+      // j++;
+      // }
+
+      // while (i < n) {
+      // ans.append(word1.charAt(i));
+      // i++;
+      // }
+
+      // while (j < m) {
+      // ans.append(word2.charAt(j));
+      // j++;
+      // }
+
+      // String a = ans.toString();
+      // return a;
+
+      StringBuilder ans = new StringBuilder();
+      int i = 0;
+
+      while (i < word1.length() || i < word2.length()) {
+         if (i < word1.length())
+            ans.append(word1.charAt(i));
+         if (i < word2.length())
+            ans.append(word2.charAt(i));
+         i++;
+      }
+
+      return ans.toString();
+   }
+
+   public static void trail(String s) {
+      // s = s.trim();
+      // StringBuilder a = new StringBuilder();
+      // int n = s.length();
+      // int i = n-1,j = n-1;
+
+      // while(j >= 0)
+      // {
+      // if(s.charAt(j) == ' ' || j == 0)
+      // {
+      // int start = (j == 0) ? j : j + 1;
+
+      // if (a.length() != 0)
+      // {
+      // a.append(" ");
+      // }
+
+      // a.append(s.substring(start, i + 1));
+      // i = j - 1;
+      // }
+      // j--;
+
+      // }
+      // String r = a.toString();
+      // System.out.println(r.trim());
+
+      String[] words = s.trim().split("\\s+");
+      StringBuilder ans = new StringBuilder();
+
+      int n = words.length;
+      for(int i = n-1;i>=0;i--)
+      {
+         ans.append(words[i]).append(" ");
+      }
+
+      String r = ans.toString().trim();
+      System.out.println(r);
+
    }
 
 }
