@@ -1039,8 +1039,16 @@ class Main {
 
       // int r = ReverseBits(43261596);
 
-      boolean r = ispower3(27);
+      // boolean r = ispower3(27);
+      // System.out.println(r);
+
+      // boolean r = bin(110);
+
+      // int r = inversionCount(new int[] { 1, 2, 3 });
+      
+      ArrayList<Integer> r =  missingRange(new int[]{1, 4, 11, 51, 15},50,55);
       System.out.println(r);
+   
    }
 
    static void CountAllDigits(int n, int c) {
@@ -1376,6 +1384,102 @@ class Main {
       return ispower4(n / 4);
    }
 
-   
+   public static boolean bin(int n) {
+      // int b = 0;
+      // while(n > 0)
+      // {
+      // int last = n%2;
+
+      // b= b*10+last;
+      // n = n/2;
+      // }
+      // System.out.println(b);
+
+      // if (n == 0) {
+      // System.out.println(b);
+      // return;
+      // }
+
+      // int l = n % 2;
+      // b = b * 10 + l;
+      // bin(n/2,b);
+
+      String a = Integer.toBinaryString(n);
+      System.out.println(a);
+
+      for (int i = 1; i < a.length(); i++) {
+         if (a.charAt(i - 1) == a.charAt(i)) {
+            return false;
+         }
+      }
+
+      return true;
+
+   }
+
+   public static int inversionCount(int arr[]) {
+
+      // int c =0;
+      // int i =0;
+      // int n = arr.length;
+
+      // while(i < n-1)
+      // {
+      // int j = i+1;
+      // while(j < n)
+      // {
+      // if( arr[i] > arr[j])
+      // {
+      // c++;
+      // }
+
+      // j++;
+      // }
+
+      // i++;
+      // }
+
+      // return c;
+
+      int r = ic(arr, 0, 1, 0);
+
+      return r;
+
+   }
+
+   public static int ic(int[] arr, int i, int j, int c) {
+      if (i >= arr.length - 1) {
+         return c;
+      }
+      if (j >= arr.length) {
+         return ic(arr, i + 1, i + 2, c);
+      }
+      if (arr[i] > arr[j]) {
+         return ic(arr, i, j + 1, c + 1);
+      }
+
+      return ic(arr, i, j + 1, c);
+   }
+
+ public static ArrayList<Integer> missingRange(int[] arr, int low, int high) {
+     
+   HashMap<Integer,Integer> hm = new HashMap<>();
+   ArrayList<Integer> list = new ArrayList<>();
+
+      for(int i = 0;i<arr.length;i++)
+      {
+       hm.put(arr[i],0);
+      }
+
+      for(int j = low;j<=high;j++)
+      {
+         if(!hm.containsKey(j))
+         {
+            list.add(j);
+         }
+      }
+
+      return list;
+    }
 
 }
