@@ -47,9 +47,12 @@ public class Recursion {
       // String r = skipA("baabbaccab",new StringBuilder(),0);
       // String r = skipWord("sunilApplesunncc", "Apple",new StringBuilder(),0);
       // String r = mergeAlternately("abc", "pqr");
-      // System.out.println(r);
 
-      trail("the sky is blue");
+      // trail("the sky is blue");
+
+      // int n = romanToDecimal("IX");
+      
+    
 
    }
 
@@ -552,8 +555,7 @@ public class Recursion {
       StringBuilder ans = new StringBuilder();
 
       int n = words.length;
-      for(int i = n-1;i>=0;i--)
-      {
+      for (int i = n - 1; i >= 0; i--) {
          ans.append(words[i]).append(" ");
       }
 
@@ -562,4 +564,38 @@ public class Recursion {
 
    }
 
+   public static int romanToDecimal(String s) {
+
+      int num = 0;
+      for (int i = 0; i < s.length(); i++) {
+
+         if (s.charAt(i) == 'I') {
+            num += 1;
+         }
+         if (s.charAt(i) == 'V') {
+            num += 5;
+         }
+         if (s.charAt(i) == 'X') {
+            num += 10;
+         }
+         if (s.charAt(i) == 'L') {
+            num += 50;
+         }
+         if (s.charAt(i) == 'C') {
+            num += 100;
+         }
+         if (s.charAt(i) == 'D') {
+            num += 500;
+         }
+         if (s.charAt(i) == 'M') {
+            num += 1000;
+         }
+
+      }
+
+      return num;
+
+   }
+
+  
 }
