@@ -1045,10 +1045,12 @@ class Main {
       // boolean r = bin(110);
 
       // int r = inversionCount(new int[] { 1, 2, 3 });
-      
-      ArrayList<Integer> r =  missingRange(new int[]{1, 4, 11, 51, 15},50,55);
+
+      // ArrayList<Integer> r = missingRange(new int[]{1, 4, 11, 51, 15},50,55);
+      // boolean r = prime(10);
+      int r = countPrimeSetBits(6, 10);
       System.out.println(r);
-   
+
    }
 
    static void CountAllDigits(int n, int c) {
@@ -1461,25 +1463,57 @@ class Main {
       return ic(arr, i, j + 1, c);
    }
 
- public static ArrayList<Integer> missingRange(int[] arr, int low, int high) {
-     
-   HashMap<Integer,Integer> hm = new HashMap<>();
-   ArrayList<Integer> list = new ArrayList<>();
+   public static ArrayList<Integer> missingRange(int[] arr, int low, int high) {
 
-      for(int i = 0;i<arr.length;i++)
-      {
-       hm.put(arr[i],0);
+      HashMap<Integer, Integer> hm = new HashMap<>();
+      ArrayList<Integer> list = new ArrayList<>();
+
+      for (int i = 0; i < arr.length; i++) {
+         hm.put(arr[i], 0);
       }
 
-      for(int j = low;j<=high;j++)
-      {
-         if(!hm.containsKey(j))
-         {
+      for (int j = low; j <= high; j++) {
+         if (!hm.containsKey(j)) {
             list.add(j);
          }
       }
 
       return list;
-    }
+   }
+
+   public static int countPrimeSetBits(int left, int right) {
+      int count = 0;
+      String bin = "";
+      for(int i = left; i <= right; i++) {
+         int ones = 0;
+         bin = Integer.toBinaryString(i);
+         for (int j = 0; j < bin.length(); j++) {
+            if (bin.charAt(j) == '1') {
+               ones++;
+            }
+
+         }
+         if (prime(ones)) {
+            count++;
+         }
+      }
+
+      return count;
+   }
+
+   public static boolean prime(int n) {
+      if (n < 2) {
+         return false;
+      }
+
+      for (int i = 2; i * i <= n; i++) {
+         if (n % i == 0) {
+            return false;
+         }
+      }
+
+      return true;
+   }
+
 
 }
