@@ -1048,7 +1048,15 @@ class Main {
 
       // ArrayList<Integer> r = missingRange(new int[]{1, 4, 11, 51, 15},50,55);
       // boolean r = prime(10);
-      int r = countPrimeSetBits(6, 10);
+      // int r = countPrimeSetBits(6, 10);
+
+      // String r="";
+      // for(int i =1;i<15;i++)
+      // {
+      // r = binaryGap(i);
+      // System.out.println(r);
+      // }
+      int r = binaryGap(15);
       System.out.println(r);
 
    }
@@ -1484,7 +1492,7 @@ class Main {
    public static int countPrimeSetBits(int left, int right) {
       int count = 0;
       String bin = "";
-      for(int i = left; i <= right; i++) {
+      for (int i = left; i <= right; i++) {
          int ones = 0;
          bin = Integer.toBinaryString(i);
          for (int j = 0; j < bin.length(); j++) {
@@ -1515,5 +1523,27 @@ class Main {
       return true;
    }
 
+   public static int binaryGap(int n) {
+      int Maxcount = 0;
 
+      String bin = Integer.toBinaryString(n);
+      int i = -1;
+      int j = 0;
+
+      while (j < bin.length()) {
+
+         if (bin.charAt(j) == '1') {
+            if (i != -1) {
+               int count = j - i;
+               Maxcount = Math.max(count, Maxcount);
+
+            }
+            i = j;
+         }
+         j++;
+
+      }
+
+      return Maxcount;
+   }
 }
