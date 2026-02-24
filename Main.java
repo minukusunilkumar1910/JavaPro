@@ -1056,7 +1056,8 @@ class Main {
       // r = binaryGap(i);
       // System.out.println(r);
       // }
-      int r = binaryGap(15);
+      // int r = binaryGap(15);
+      ArrayList<Integer> r = findUnion(new int[]{1,2,3,2,1}, new int[]{3,2,2,3,3,2});
       System.out.println(r);
 
    }
@@ -1546,4 +1547,40 @@ class Main {
 
       return Maxcount;
    }
+
+   public boolean hasAllCodes(String s, int k) {
+        
+        int n = s.length();
+        Set<String> set = new HashSet<>();
+
+        for(int i = 0; i <= n - k; i++) {
+            set.add(s.substring(i, i + k));
+        }
+
+        return set.size() == (1 << k);
+    }
+
+   public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+     
+      ArrayList<Integer> list = new ArrayList<>();
+
+      HashSet<Integer> hs = new HashSet<>();
+       
+     for(int i = 0; i < a.length; i++) {
+            if(!hs.contains(a[i])) {
+                hs.add(a[i]);
+                list.add(a[i]);
+            }
+        }
+
+        for(int j = 0; j < b.length; j++) {
+            if(!hs.contains(b[j])) {
+                hs.add(b[j]);
+                list.add(b[j]);
+            }
+        }
+      return list;
+        
+    } 
+    
 }
