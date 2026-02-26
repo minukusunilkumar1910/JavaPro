@@ -1057,9 +1057,22 @@ class Main {
       // System.out.println(r);
       // }
       // int r = binaryGap(15);
-      ArrayList<Integer> r = findUnion(new int[]{1,2,3,2,1}, new int[]{3,2,2,3,3,2});
-      System.out.println(r);
+      // ArrayList<Integer> r = findUnion(new int[]{1,2,3,2,1}, new
+      // int[]{3,2,2,3,3,2});
+      // sortofBits(arr);
+      // int[] arr = { 11, 60, 26, 7, 44, 30, 18, 29, 10, 72, 3, 4, 49, 77, 23, 21,
+      // 20, 34, 20, 99, 21, 70, 9, 74, 41,
+      // 35 };
+      // int r = longestSubarray(arr, 2);
+      // System.out.println(r);
+      // noSteps("1101");
 
+      // word("HelloWolrd", "Amazing", 5);
+      // String s = "racecar";
+      // int r = help(s, 0, s.length()-1);
+
+      boolean r = iso("aab", "xxy");
+      System.out.println(r);
    }
 
    static void CountAllDigits(int n, int c) {
@@ -1549,38 +1562,169 @@ class Main {
    }
 
    public boolean hasAllCodes(String s, int k) {
-        
-        int n = s.length();
-        Set<String> set = new HashSet<>();
 
-        for(int i = 0; i <= n - k; i++) {
-            set.add(s.substring(i, i + k));
-        }
+      int n = s.length();
+      Set<String> set = new HashSet<>();
 
-        return set.size() == (1 << k);
-    }
+      for (int i = 0; i <= n - k; i++) {
+         set.add(s.substring(i, i + k));
+      }
+
+      return set.size() == (1 << k);
+   }
 
    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
-     
+
       ArrayList<Integer> list = new ArrayList<>();
 
       HashSet<Integer> hs = new HashSet<>();
-       
-     for(int i = 0; i < a.length; i++) {
-            if(!hs.contains(a[i])) {
-                hs.add(a[i]);
-                list.add(a[i]);
-            }
-        }
 
-        for(int j = 0; j < b.length; j++) {
-            if(!hs.contains(b[j])) {
-                hs.add(b[j]);
-                list.add(b[j]);
-            }
-        }
+      for (int i = 0; i < a.length; i++) {
+         if (!hs.contains(a[i])) {
+            hs.add(a[i]);
+            list.add(a[i]);
+         }
+      }
+
+      for (int j = 0; j < b.length; j++) {
+         if (!hs.contains(b[j])) {
+            hs.add(b[j]);
+            list.add(b[j]);
+         }
+      }
       return list;
-        
-    } 
-    
+
+   }
+
+   public static void sortofBits(int[] arr) {
+
+      for (int i = 0; i < arr.length - 1; i++) {
+         for (int j = i + 1; j < arr.length; j++) {
+
+            int bitI = Integer.bitCount(arr[i]);
+            int bitJ = Integer.bitCount(arr[j]);
+
+            if (bitI > bitJ ||
+                  (bitI == bitJ && arr[i] > arr[j])) {
+
+               int temp = arr[i];
+               arr[i] = arr[j];
+               arr[j] = temp;
+            }
+         }
+      }
+      System.out.println(Arrays.toString(arr));
+   }
+
+   public static int longestSubarray(int[] arr, int k) {
+      // Code Here
+      int max1 = 0;
+      int c = 0;
+
+      for (int i = 0; i < arr.length; i++) {
+         if (arr[i] <= k) {
+            c++;
+            max1 = Math.max(c, max1);
+         } else {
+            c = 0;
+         }
+
+      }
+
+      return max1;
+   }
+
+   public static void noSteps(String str) {
+      int c = 0;
+      int i = str.length() - 1;
+      while (i > 0) {
+         char l = str.charAt(str.length() - 1);
+         if (l == '1') {
+            c += 2;
+         } else {
+            c++;
+         }
+         i--;
+      }
+      System.out.println(c);
+   }
+
+   public static void word(String s1, String s2, int pos) {
+      StringBuilder str = new StringBuilder();
+      for (int i = 0; i < s1.length(); i++) {
+
+         if (i == pos) {
+            int j = 0;
+            if (j < s2.length()) {
+               str.append(s2);
+               str.append(s1.charAt(i));
+
+               j = s2.length();
+            }
+         }
+
+         else {
+            str.append(s1.charAt(i));
+
+         }
+
+      }
+
+      System.out.println(str.toString());
+   }
+
+   public static boolean pal(String s, int start, int end) {
+      while (start < end) {
+         if (s.charAt(start) != s.charAt(end))
+            return false;
+         start++;
+         end--;
+      }
+      return true;
+   }
+
+   public static int help(String s, int start, int end) {
+      if (start >= end || pal(s, start, end))
+         return 0;
+
+      int cut = Integer.MAX_VALUE;
+
+      for (int k = start; k < end; k++) {
+         int left = help(s, start, k);
+         int right = help(s, k + 1, end);
+
+         cut = Math.min(cut, left + right + 1);
+      }
+
+      return cut;
+   }
+
+   public static boolean iso(String s1, String s2) {
+      HashMap<Character, Character> hm1 = new HashMap<>();
+      HashMap<Character, Character> hm2 = new HashMap<>();
+      for (int i = 0; i < s1.length(); i++) {
+         char c1 = s1.charAt(i);
+         char c2 = s2.charAt(i);
+
+         if (hm1.containsKey(c1)) {
+            if (hm1.get(c1) != c2) {
+               return false;
+            }
+         } else {
+            hm1.put(c1, c2);
+         }
+
+         if (hm2.containsKey(c2)) {
+            if (hm2.get(c2) != c1) {
+               return false;
+            }
+         } else {
+            hm1.put(c2, c1);
+         }
+      }
+
+      return true;
+
+   }
+
 }
