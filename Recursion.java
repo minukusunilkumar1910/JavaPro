@@ -52,8 +52,8 @@ public class Recursion {
 
       // int n = romanToDecimal("IX");
       
-    
-
+    int r = findMax(new int[]{ -4,-3}, 0, Integer.MIN_VALUE);
+     System.out.println(r);
    }
 
    public static void PrintSt_to_End(int n, int m) {
@@ -597,5 +597,19 @@ public class Recursion {
 
    }
 
-  
+   public static int findMax(int[] arr, int i,int max)
+   {
+      if(i == arr.length)
+      {
+         return max;
+      }
+
+
+      if(arr[i] > max)
+      {
+         max = arr[i];
+      }
+
+      return findMax(arr, i+1, max);
+   }
 }
