@@ -1071,8 +1071,15 @@ class Main {
       // String s = "racecar";
       // int r = help(s, 0, s.length()-1);
 
-      boolean r = iso("aab", "xxy");
+      // boolean r = iso("aab", "xxy");
+      // System.out.println(r);
+      // int[] arr = {5,7,7,8,8,10};
+      // int[] a = searchRange(arr,8);
+      // System.out.println(Arrays.toString(a));
+
+      int r = len("abrkaabcdefghijjxxx");
       System.out.println(r);
+
    }
 
    static void CountAllDigits(int n, int c) {
@@ -1700,6 +1707,7 @@ class Main {
    }
 
    public static boolean iso(String s1, String s2) {
+
       HashMap<Character, Character> hm1 = new HashMap<>();
       HashMap<Character, Character> hm2 = new HashMap<>();
       for (int i = 0; i < s1.length(); i++) {
@@ -1727,4 +1735,57 @@ class Main {
 
    }
 
+   public static int[] searchRange(int[] nums, int tar) {
+
+      int[] r = { -1, -1 };
+
+      int low = 0;
+      int high = nums.length - 1;
+      while (low >= high) {
+         int mid = (low + high) / 2;
+
+         if (nums[mid] == tar) {
+            if (nums[mid + 1] == tar) {
+               r[0] = mid;
+               r[1] = mid + 1;
+               return r;
+            } else {
+               r[0] = mid;
+               r[1] = mid + 1;
+               return r;
+
+            }
+         } else if (nums[mid] > tar) {
+            high = mid - 1;
+         } else {
+            low = mid + 1;
+         }
+
+      }
+      return r;
+   }
+
+   public static int len(String str) {
+      int i = 0;
+      int j = i + 1;
+      int n = str.length() - 1;
+      int maxlen = 0;
+      while (j < n) {
+         int len = 0;
+         while (j < n) {
+            if (str.charAt(i) != str.charAt(j)) {
+               len = j - i;
+               maxlen = Math.max(len, maxlen);
+               j++;
+            } else {
+
+               i++;
+            }
+         }
+
+         j++;
+      }
+
+      return maxlen;
+   }
 }
