@@ -1765,6 +1765,7 @@ class Main {
       return r;
    }
 
+ 
    public static int len(String str) {
       int i = 0;
       int j = i + 1;
@@ -1787,5 +1788,21 @@ class Main {
       }
 
       return maxlen;
+   }
+
+   public static void factors(int n, int i, int j) {
+      if (i > n) {
+         return;
+      }
+      if (i * j == n) {
+
+         System.out.println("[" + i + "," + j + "]");
+      }
+      if (j <= n) {
+         factors(n, i, j + 1);
+      } else {
+         factors(n, i + 1, 1);
+      }
+
    }
 }
