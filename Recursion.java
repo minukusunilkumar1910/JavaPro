@@ -51,9 +51,36 @@ public class Recursion {
       // trail("the sky is blue");
 
       // int n = romanToDecimal("IX");
-      
-    int r = findMax(new int[]{ -4,-3}, 0, Integer.MIN_VALUE);
-     System.out.println(r);
+
+      // int r = findMax(new int[]{ -4,-3}, 0, Integer.MIN_VALUE);
+      // System.out.println(r);
+      // print1toN(10);
+
+      // mult(2, 1);
+      // int[] arr = {1,2,3,4,5};
+      // int r = list(arr, 0, 0);
+      // System.out.println("sum = "+r);
+
+      // int r = odd(1234, 0);
+      // factors(12, 1, 1);
+      // System.out.println(r);
+
+       int num = 17;
+       if (isPrime(num, 2))
+            System.out.println(num + " is a Prime Number");
+        else
+            System.out.println(num + " is not a Prime Number");
+
+   }
+
+   public static void print1toN(int n) {
+      if (n == 0) {
+         return;
+      }
+
+      // System.out.println(n);
+      print1toN(n - 1);
+      System.out.println(n);
    }
 
    public static void PrintSt_to_End(int n, int m) {
@@ -71,16 +98,6 @@ public class Recursion {
       }
 
       SumOfN(n - 1, sum + n);
-
-   }
-
-   public static void fact(int n, int val) {
-      if (n == 0 || n == 1) {
-         System.out.println(val);
-         return;
-      }
-
-      fact(n - 1, n * val);
 
    }
 
@@ -597,19 +614,93 @@ public class Recursion {
 
    }
 
-   public static int findMax(int[] arr, int i,int max)
-   {
-      if(i == arr.length)
-      {
+   public static int findMax(int[] arr, int i, int max) {
+      if (i == arr.length) {
          return max;
       }
 
-
-      if(arr[i] > max)
-      {
+      if (arr[i] > max) {
          max = arr[i];
       }
 
-      return findMax(arr, i+1, max);
+      return findMax(arr, i + 1, max);
    }
+
+   public static int findMin(int[] arr, int i, int min) {
+      if (i == arr.length) {
+         return min;
+      }
+
+      if (arr[i] < min) {
+         min = arr[i];
+      }
+
+      return findMax(arr, i + 1, min);
+   }
+
+   public static void mult(int n, int i) {
+      if (i == 11) {
+         return;
+      }
+
+      System.out.println(n + "x" + i + "=" + n * i);
+      mult(n, i + 1);
+   }
+
+   public static int list(int[] arr, int i, int sum) {
+      if (i == arr.length) {
+         return sum;
+      }
+      sum += arr[i];
+      System.out.print(arr[i] + " ");
+      return list(arr, i + 1, sum);
+   }
+
+   public static void fact(int n, int val) {
+      if (n == 0 || n == 1) {
+         System.out.println(val);
+         return;
+      }
+
+      fact(n - 1, n * val);
+
+   }
+
+   public static int odd(int n, int sum) {
+      if (n == 0) {
+         return sum;
+      }
+      int last = n % 10;
+      if (last % 2 != 0) {
+         return odd(n / 10, sum + last);
+      }
+      return odd(n / 10, sum);
+   }
+
+   public static void factors(int n, int i, int j) {
+      if (i > n) {
+         return;
+      }
+      if (i * j == n) {
+
+         System.out.println("[" + i + "," + j + "]");
+      }
+      if (j <= n) {
+         factors(n, i, j + 1);
+      } else {
+         factors(n, i + 1, 1);
+      }
+
+   }
+
+    static boolean isPrime(int n, int i) {
+        if (n <= 2)
+            return (n == 2);
+        if (n % i == 0)
+            return false;
+        if (i * i > n)
+            return true;
+
+        return isPrime(n, i + 1);
+    }
 }
