@@ -63,19 +63,36 @@ class Trees {
       return Math.max(a, Math.max(b, c));
 
    }
-   public static int height(Node root)
-   {
-      if(root == null)
-      {
+
+   public static int height(Node root) {
+      if (root == null) {
          return 0;
       }
 
       int lh = height(root.left);
       int rh = height(root.right);
 
-      return Math.max(lh,rh)+1;
+      return Math.max(lh, rh) + 1;
    }
 
+   public static int count(Node root) {
+      if (root == null) {
+         return 0;
+      }
+
+      int lc = count(root.left);
+      int rc = count(root.right);
+
+      return lc + rc + 1;
+   }
+   public static int sumofN(Node root)
+   {
+      if(root == null)
+      {
+         return 0;
+      }
+      return root.val + sumofN(root.left)+sumofN(root.right);
+   }
    public static void main(String[] args) {
       Node root = new Node(1);
 
@@ -84,7 +101,7 @@ class Trees {
 
       root.left.left = new Node(4);
       root.left.right = new Node(5);
-      
+
       root.right.right = new Node(6);
       // display(root);
       // System.out.println("Inorder Traversal");
@@ -93,7 +110,9 @@ class Trees {
       int s = sum(root);
       int m = maxVal(root);
       int h = height(root);
-      System.out.println("Height (Node) = " + h);
+      int c = count(root);
+      int sum = sumofN(root);
+      System.out.println("Height (Node) = " + sum);
    }
 
 }

@@ -1765,7 +1765,6 @@ class Main {
       return r;
    }
 
- 
    public static int len(String str) {
       int i = 0;
       int j = i + 1;
