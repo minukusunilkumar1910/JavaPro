@@ -93,6 +93,32 @@ class Trees {
       }
       return root.val + sumofN(root.left)+sumofN(root.right);
    }
+
+      int minDiff = Integer.MAX_VALUE;
+    Node prev = null;
+
+    public int minDiffInBST(Node root) {
+
+        inorder(root);
+        return minDiff;
+    }
+
+    public void inorderin(Node root) {
+
+        if(root == null)
+            return;
+
+        inorderin(root.left);
+
+        // Process current node
+        if(prev != null) {
+            minDiff = Math.min(minDiff, root.val - prev.val);
+        }
+
+        prev = root;
+
+        inorderin(root.right);
+    }
    public static void main(String[] args) {
       Node root = new Node(1);
 
