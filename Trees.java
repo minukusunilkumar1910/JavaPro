@@ -1,3 +1,4 @@
+import java.util.*;
 class Trees {
    public static class Node {
       int val;
@@ -93,32 +94,34 @@ class Trees {
       }
       return root.val + sumofN(root.left)+sumofN(root.right);
    }
-
-      int minDiff = Integer.MAX_VALUE;
-    Node prev = null;
-
-    public int minDiffInBST(Node root) {
-
-        inorder(root);
-        return minDiff;
+ public static  List<Integer> preorderTraversel(Node root)
+ {
+   List<Integer> li = new ArrayList<>();
+    if(root == null)
+    {
+      return li;
     }
+   Stack<Node> st = new Stack<>();
+   st.push(root);
+   while(!st.isEmpty())
+   {
+      root = st.pop();
+      li.add(root.val);
 
-    public void inorderin(Node root) {
+      if(root.right != null)
+      {
+         st.push(root.right);
+      }
+      if(root.left != null)
+      {
+         st.push(root.left);
+      }
+   }
 
-        if(root == null)
-            return;
+   return li;
+ }
 
-        inorderin(root.left);
-
-        // Process current node
-        if(prev != null) {
-            minDiff = Math.min(minDiff, root.val - prev.val);
-        }
-
-        prev = root;
-
-        inorderin(root.right);
-    }
+     
    public static void main(String[] args) {
       Node root = new Node(1);
 
@@ -138,7 +141,10 @@ class Trees {
       int h = height(root);
       int c = count(root);
       int sum = sumofN(root);
-      System.out.println("Height (Node) = " + sum);
+      // System.out.println("Height (Node) = " + sum);
+      List<Integer> res = preorderTraversel(root);
+      System.out.println(res);
+
    }
 
 }
