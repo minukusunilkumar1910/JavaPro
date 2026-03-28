@@ -120,7 +120,34 @@ class Trees {
 
    return li;
  }
+    public static List<Integer> inorderTraversel(Node root) {
+      List<Integer> li = new ArrayList<>();
 
+      if (root == null) {
+         return li;
+      }
+
+      Stack<Node> st = new Stack<>();
+      Node node = root;
+
+      while (true) {
+         if(node != null)
+         {
+            st.push(node);
+            node = node.left;
+         }
+         else{
+            if(st.isEmpty())
+            {
+               break;
+            }
+            node = st.pop();
+            li.add(node.val);
+            node = node.right;
+         }
+      }
+      return li;
+   }
      
    public static void main(String[] args) {
       Node root = new Node(1);
@@ -142,7 +169,7 @@ class Trees {
       int c = count(root);
       int sum = sumofN(root);
       // System.out.println("Height (Node) = " + sum);
-      List<Integer> res = preorderTraversel(root);
+      List<Integer> res = inorderTraversel(root);
       System.out.println(res);
 
    }
