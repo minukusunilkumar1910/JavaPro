@@ -120,6 +120,34 @@ class Trees {
 
    return li;
  }
+
+ public static Node removeHalfNode(Node root)
+ {
+   if(root == null)
+   {
+      return null;
+   }
+
+   root.left = removeHalfNode(root.left);
+   root.right = removeHalfNode(root.right);
+
+   if(root.left == null && root.right == null)
+   {
+      return root;
+   }
+
+   if(root.right == null)
+   {
+      return root.left;
+   }
+
+   if(root.left == null)
+   {
+      return root.right;
+   }
+
+   return root;
+ }
     public static List<Integer> inorderTraversel(Node root) {
       List<Integer> li = new ArrayList<>();
 
