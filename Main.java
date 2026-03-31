@@ -1077,7 +1077,10 @@ class Main {
       // int[] a = searchRange(arr,8);
       // System.out.println(Arrays.toString(a));
 
-      int r = len("abrkaabcdefghijjxxx");
+      // int r = len("abrkaabcdefghijjxxx");
+      // int r = add(234);
+      // int r = multiple(2034);
+      int r = multipleOfNonz(2034);
       System.out.println(r);
 
    }
@@ -1804,4 +1807,39 @@ class Main {
       }
 
    }
+
+   public static int add(int n) {
+      if (n == 0) {
+         return n;
+      }
+
+      int last = n % 10;
+      return add(n / 10) + last;
+   }
+   public static int multiple(int n)
+   {
+      if(n == 0)
+      {
+         return 1;
+      }
+
+      int last = n%10;
+       
+      return multiple(n/10)*last;
+   }
+  public static int multipleOfNonz(int n)
+   {
+      if(n == 0)
+      {
+         return 1;
+      }
+
+      int last = n%10;
+      if(last == 0)
+      {
+         return multipleOfNonz(n/10);
+      }
+      return multipleOfNonz(n/10)*last;
+   }
+   
 }
