@@ -1080,7 +1080,8 @@ class Main {
       // int r = len("abrkaabcdefghijjxxx");
       // int r = add(234);
       // int r = multiple(2034);
-      int r = multipleOfNonz(2034);
+      // int r = multipleOfNonz(2034);
+      int r = strlen("sunil", 0);
       System.out.println(r);
 
    }
@@ -1816,6 +1817,7 @@ class Main {
       int last = n % 10;
       return add(n / 10) + last;
    }
+  
    public static int multiple(int n)
    {
       if(n == 0)
@@ -1827,7 +1829,8 @@ class Main {
        
       return multiple(n/10)*last;
    }
-  public static int multipleOfNonz(int n)
+
+   public static int multipleOfNonz(int n)
    {
       if(n == 0)
       {
@@ -1842,4 +1845,18 @@ class Main {
       return multipleOfNonz(n/10)*last;
    }
    
+   public static int strlen(String str,int i)
+   { 
+      if(i==str.length())
+      {
+         return 0;
+      }
+      
+       return 1+strlen(str,i+1); 
+       
+      
+   } 
+
+
+
 }
