@@ -1073,16 +1073,24 @@ class Main {
 
       // boolean r = iso("aab", "xxy");
       // System.out.println(r);
-      // int[] arr = {5,7,7,8,8,10};
       // int[] a = searchRange(arr,8);
       // System.out.println(Arrays.toString(a));
-
+      
       // int r = len("abrkaabcdefghijjxxx");
       // int r = add(234);
       // int r = multiple(2034);
       // int r = multipleOfNonz(2034);
-      int r = strlen("sunil", 0);
-      System.out.println(r);
+      // int r = strlen("sunil", 0);
+
+
+      // int[] arr = {-5,-7,-7,-8};
+      // int r = maxrec(arr, 0, arr.length-1);
+      // System.out.println(r);
+      
+      
+            // boolean r = armstrong(i);
+          ArmStrong();
+          
 
    }
 
@@ -1131,26 +1139,7 @@ class Main {
       }
    }
 
-   static int ArmStrong(int n) {
 
-      int sum = 0;
-      while (n > 0) {
-         int last = n % 10;
-         int q = (int) Math.pow(last, 3);
-         sum = sum + q;
-         n = n / 10;
-      }
-      // System.out.println(sum);
-      return sum;
-
-   }
-
-   static boolean armstrong(int n) {
-      if (n == ArmStrong(n)) {
-         return true;
-      }
-      return false;
-   }
 
    static ArrayList<Integer> divisors(int n) {
       ArrayList<Integer> list = new ArrayList<>();
@@ -1845,8 +1834,7 @@ class Main {
       return multipleOfNonz(n/10)*last;
    }
    
-   public static int strlen(String str,int i)
-   { 
+   public static int strlen(String str,int i){ 
       if(i==str.length())
       {
          return 0;
@@ -1857,6 +1845,73 @@ class Main {
       
    } 
 
+   
+   // Divide & Conquer
+
+   public static int maxrec(int[] arr,int st,int end)
+   {
+      if(st == end)
+      {
+         return arr[st];
+      }
+
+      int mid  = (st+end)/2;
+
+      int leftmax = maxrec(arr, st, mid);
+      int rightmax = maxrec(arr, mid+1,end);
+
+      int ans = Math.max(leftmax,rightmax);
+
+      return ans;
+   }
 
 
+
+   static void ArmStrong() {
+
+       for (int n= 1; n <= 10000; n++)
+        {
+            int original = n;
+            int sum = 0;
+
+            int temp = n;
+            int digits = 0;
+            while (temp != 0)
+            {
+                digits++;
+                temp = temp / 10;
+            }
+
+            int curr = n;
+            while (curr != 0)
+            {
+                int rem = curr % 10;
+                int power = 1;
+
+
+
+                for (int i = 0; i < digits; i++)
+                {
+                    power = power * rem;
+                }
+
+                sum = sum + power;
+                curr = curr / 10;
+            }
+
+            if (sum == original)
+            {
+                System.out.println(original);
+            }
+        }
+   }
+
+   // static boolean armstrong(int n) {
+   //    if (n == ArmStrong(n)) {
+   //       return true;
+   //    }
+   //    return false;
+   // }
 }
+
+
